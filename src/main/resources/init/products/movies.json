@@ -1,0 +1,77 @@
+[
+  {
+    "type": "MOVIE",
+    "title": "Interstellar",
+    "price": "11.99",
+    "director": "Christopher Nolan",
+    "studio": "Legendary Pictures",
+    "imdbUrl": "https://www.imdb.com/title/tt0816692/?ref_=nv_sr_srsg_0",
+    "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "releasedOn": "07-11-2014",
+    "mediaTypes": ["BLUE_RAY", "DVD"],
+    "genres": ["SCI_FI", "DRAMA", "ADVENTURE"],
+    "image": {
+      "imagePath": "/img/movies/interstellar.jpeg"
+    }
+  },
+  {
+    "type": "MOVIE",
+    "title": "The Prestige",
+    "price": "14.00",
+    "director": "Christopher Nolan",
+    "studio": "Legendary Pictures",
+    "imdbUrl": "https://www.imdb.com/title/tt0482571/?ref_=nv_sr_srsg_0",
+    "description": "After a tragic accident, two stage magicians in 1890s London engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.",
+    "releasedOn": "12-01-2007",
+    "mediaTypes": ["BLUE_RAY", "DVD"],
+    "genres": ["SCI_FI", "DRAMA", "MYSTERY"],
+    "image": {
+      "imagePath": "/img/movies/the_prestige.jpg"
+    }
+  },
+  {
+    "type": "MOVIE",
+    "title": "Malignant",
+    "price": "11.00",
+    "director": "James Wan",
+    "studio": "New Line Cinema",
+    "imdbUrl": "https://www.imdb.com/title/tt3811906/?ref_=nv_sr_srsg_0",
+    "description": "Madison is paralyzed by shocking visions of grisly murders, and her torment worsens as she discovers that these waking dreams are in fact terrifying realities.",
+    "releasedOn": "12-01-2007",
+    "mediaTypes": [ "DVD"],
+    "genres": ["CRIME", "HORROR", "MYSTERY"],
+    "image": {
+      "imagePath": "/img/movies/malignant.jpg"
+    }
+  },
+  {
+    "type": "MOVIE",
+    "title": "Horrible Bosses",
+    "price": "8.80",
+    "director": "Seth Gordon",
+    "studio": "New Line Cinema",
+    "imdbUrl": "https://www.imdb.com/title/tt1499658/?ref_=nv_sr_srsg_0",
+    "releasedOn": "12-01-2007",
+    "description": "Three friends conspire to murder their awful bosses when they realize they are standing in the way of their happiness.",
+    "mediaTypes": [ "BLUE_RAY"],
+    "genres": ["CRIME", "COMEDY"],
+    "image": {
+      "imagePath": "/img/movies/horrible_bosses.jpg"
+    }
+  },
+  {
+    "type": "MOVIE",
+    "title": "Joker",
+    "price": "12.80",
+    "director": "Todd Phillips",
+    "studio": "New Line Cinema",
+    "imdbUrl": "https://www.imdb.com/title/tt7286456/?ref_=nv_sr_srsg_0",
+    "releasedOn": "12-01-2007",
+    "description": "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.",
+    "mediaTypes": [ "BLUE_RAY" ],
+    "genres": ["CRIME", "COMEDY", "THRILLER", "DRAMA"],
+    "image": {
+      "imagePath": "/img/movies/joker.jpg"
+    }
+  }
+]

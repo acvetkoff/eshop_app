@@ -1,0 +1,190 @@
+<th:block xmlns:th="http://www.thymeleaf.org">
+
+    <div th:fragment="games" class="product-info" th:each="game : ${games}" th:object="${game}">
+        <div class="product-image">
+            <a th:href="@{/products/{id} (id = *{id})}" class="product-poster">
+                <img th:src="@{|*{image.imagePath}|}" alt="product image">
+            </a>
+        </div>
+        <div class="stars stars-rating-wrapper">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <!--                        TODO: reviews count-->
+            <p class="rating">4.31 (31)</p>
+        </div>
+        <div class="product-title-wrapper">
+            <p class="product-title" th:text="*{#strings.abbreviate(title, 20)}">
+                default title
+            </p>
+        </div>
+        <div class="product-genres">
+            <p th:text="*{#strings.arrayJoin(genres, ', ')}">default genres</p>
+        </div>
+        <div class="product-price" th:text="*{price}">
+            default price
+        </div>
+        <div class="add-to-cart">
+            <form th:action="@{/orders/add}" method="POST">
+                <label for="add-to-cart">
+                    <input class="c-add-btn" type="submit" id="add-to-cart" value="Add to cart">
+                    <input type="hidden" name="productId" th:value="*{id}">
+                    <input type="hidden" name="quantity" value="1">
+                    <input type="hidden" name="currentPageURI" th:value="${currentPageURI}">
+                </label>
+            </form>
+        </div>
+    </div>
+
+    <div th:fragment="books" class="product-info" th:each="book : ${books}" th:object="${book}">
+        <div class="product-image">
+            <a th:href="@{/products/{id} (id = *{id})}" class="product-poster">
+                <img th:src="@{|*{image.imagePath}|}" alt="product image">
+            </a>
+        </div>
+        <div class="stars stars-rating-wrapper">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <!--                        TODO: reviews count-->
+            <p class="rating">4.31 (31)</p>
+        </div>
+        <div class="product-title-wrapper">
+            <p class="product-title" th:text="*{#strings.abbreviate(title, 20)}">
+                default title
+            </p>
+        </div>
+        <div class="product-genres">
+            <p th:text="*{#strings.arrayJoin(genres, ', ')}">default genres</p>
+        </div>
+        <div class="product-price" th:text="*{price}">
+            default price
+        </div>
+        <div class="add-to-cart">
+            <form th:action="@{/orders/add}" method="POST">
+                <label for="add-to-cart">
+                    <input class="c-add-btn" type="submit" id="add-to-cart" value="Add to cart">
+                    <input type="hidden" name="productId" th:value="*{id}">
+                    <input type="hidden" name="quantity" value="1">
+                    <input type="hidden" name="currentPageURI" th:value="${currentPageURI}">
+                </label>
+            </form>
+        </div>
+    </div>
+
+    <div th:fragment="movies" class="product-info" th:each="movie : ${movies}" th:object="${movie}">
+        <div class="product-image">
+            <a th:href="@{/products/{id} (id = *{id})}" class="product-poster">
+                <img th:src="@{|*{image.imagePath}|}" alt="product image">
+            </a>
+        </div>
+        <div class="stars stars-rating-wrapper">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <!--                        TODO: reviews count-->
+            <p class="rating">4.31 (31)</p>
+        </div>
+        <div class="product-title-wrapper">
+            <p class="product-title" th:text="*{#strings.abbreviate(title, 20)}">
+                default title
+            </p>
+        </div>
+        <div class="product-genres">
+            <p th:text="*{#strings.arrayJoin(genres, ', ')}">default genres</p>
+        </div>
+        <div class="product-price" th:text="*{price}">
+            default price
+        </div>
+        <div class="add-to-cart">
+            <form th:action="@{/orders/add}" method="POST">
+                <label for="add-to-cart">
+                    <input class="c-add-btn" type="submit" id="add-to-cart" value="Add to cart">
+                    <input type="hidden" name="productId" th:value="*{id}">
+                    <input type="hidden" name="quantity" value="1">
+                    <input type="hidden" name="currentPageURI" th:value="${currentPageURI}">
+                </label>
+            </form>
+        </div>
+    </div>
+
+    <section class="related-products" th:fragment="related-products">
+        <div class="product-cards flex-center main-container product-container related-container">
+            <th:block th:each="relatedProduct : ${relatedProducts}" th:object="${relatedProduct}">
+                <a th:href="@{/products/{id}(id = *{id})}">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img th:src="@{|*{image.imagePath}|}" alt="related product pic">
+                        </div>
+                        <div class="stars flex-center">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <p class="rating">4.31 (31)</p>
+                        </div>
+                        <!--                        th:text="*{#strings.abbreviate(title, 20)}"-->
+                        <h4 th:text="*{#strings.abbreviate(title, 20)}" class="product-title">
+                            product title placeholder
+                        </h4>
+                        <p class="author-genre" th:text="*{#strings.abbreviate(#strings.arrayJoin(genres, ', '), 20)}">
+                            Thriller</p>
+                        <div class="product-price flex-center">
+                            <h3 class="price" th:text="*{price}">default</h3><span>USD</span>
+                        </div>
+                    </div>
+                </a>
+            </th:block>
+        </div>
+    </section>
+
+    <div class="product-details" th:fragment="product-details" th:object="${product}">
+        <h1 class="customer-details-heading">
+            Product details
+        </h1>
+        <ul class="pair-list">
+            <li class="pair-item flex-center">
+                <p class="first">Category:</p>
+                <p class="second" th:text="|*{#strings.capitalize(type.name().toLowerCase())}s|">Default type</p>
+            </li>
+            <li class="pair-item flex-center">
+                <p class="first">Genre:</p>
+                <!--                TODO: Should be form and button for POST request-->
+                <div class="flex-genres details-genres">
+                    <a class="second second-genre" th:each="g : *{genres}">
+                        <span th:text="${g}">Default Genres</span>
+                    </a>
+                </div>
+            </li>
+            <li class="pair-item flex-center">
+                <p class="first">Year:</p>
+                <p class="second" th:text="*{releasedOn.getYear()}">Default year</p>
+            </li>
+            <li class="pair-item flex-center">
+                <p class="first">Studio/Author:</p>
+                <div th:replace="~{fragments/product-fragments :: product-creator}"></div>
+            </li>
+        </ul>
+        <div class="line-placeholder"></div>
+    </div>
+
+    <div th:fragment="product-creator">
+        <p th:if="${type.name().equals('GAME')}" th:text="*{company}" class="genre-details-value">
+            Studio/Author/Director placeholder
+        </p>
+        <p th:if="${type.name().equals('MOVIE')}" th:text="*{director}" class="genre-details-value">
+            Studio/Author/Director placeholder
+        </p>
+        <p th:if="${type.name().equals('BOOK')}" th:text="*{author}" class="genre-details-value">
+            Studio/Author/Director placeholder
+        </p>
+    </div>
+</th:block>
+

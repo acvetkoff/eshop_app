@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Profile</title>
+    <link rel="stylesheet" href="/css/components/navbar.css">
+</head>
+<style>
+    h1 {
+        margin: 0 auto;
+        font-size: 36px;
+    }
+
+    .info {
+        flex-direction: column;
+        margin: 15px auto;
+    }
+</style>
+<body>
+<div class="main-container" th:object="${customer}">
+    <h1 th:text="|Hello, *{userUsername}!|"></h1>
+    <div class="flex-div info">
+        <p th:text="|First name: *{firstName}|"></p>
+        <p th:text="|Last name: *{lastName}|"></p>
+        <p th:text="|Phone: *{phone}|"></p>
+        <p th:text="|Address: *{address}|"></p>
+    </div>
+    <hr>
+    <div style="margin-top: 50px">
+        <a href="/customers/profile/comments" class="btn">My Comments</a>
+        <a href="/customers/profile/orders" class="btn">My Orders</a>
+    </div>
+</div>
+</body>
+</html>

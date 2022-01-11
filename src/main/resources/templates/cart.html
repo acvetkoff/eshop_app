@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop - My Orders</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/cart.css">
+
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.slim.js"
+            integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+    <nav th:replace="~{fragments/navigation :: navbar}"></nav>
+</header>
+<main>
+    <div th:replace="~{fragments/navigation :: products-navigation-panel}"></div>
+
+    <div class="middle-container">
+
+        <div class="small-container" th:if="${isCartEmpty}">
+            <div class="empty-cart-message">
+                <h3 class="center">Your cart is empty</h3>
+                <div class="center">
+                    <a class="btn-homepage" th:href="@{/home}">Go to homepage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="small-container" th:unless="${isCartEmpty}">
+            <div class="cart-heading">
+                <h3>Cart</h3>
+            </div>
+            <div class="cart-headings">
+                <p>Product</p>
+                <p>Price</p>
+                <p>Quantity</p>
+                <p>Total</p>
+            </div>
+            <th:block th:object="${orderViewModel}">
+                <div class="cart-item" th:each="item : *{items}" th:object="${item}">
+                    <div class="cart-product">
+                        <div class="cart-image">
+                            <img th:src="@{|*{product.image.imagePath}|}" alt="cart-item-image">
+                        </div>
+                        <div class="cart-product-title">
+                            <div class="cart-category">
+                                <p th:text="*{#strings.capitalize(product.type.name().toLowerCase())}">default type</p>
+                            </div>
+                            <div class="cart-title">
+                                <a th:href="@{/products/{id}(id = *{product.id})}" th:text="*{product.title}">
+                                    default product title
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item-price" th:text="|*{product.price} BGN|">
+                        <p>default product price</p>
+                    </div>
+
+                    <div class="cart-quantity">
+                        <div class="add-to-cart flex-center">
+                            <div class="spinner flex-center">
+                                <div class="decrement" onclick="decrement()">
+                                    <p>-</p>
+                                </div>
+                                <label for="quantity">
+                                    <input type="number" id="quantity" th:value="*{quantity}" min="0" class="number-spinner">
+                                </label>
+                                <div class="increment" onclick="increment()">
+                                    <p>+</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item-price total">
+                        <p th:text="|*{totalPrice} BGN|">asd</p>
+                        <form th:action="@{/orders/product?id={id} (id = ${item.product.id})}"
+                              th:method="delete">
+                            <input type="image" src="/img/icons/trash-can-solid.svg" alt="delete-icon" class="trash-can">
+                        </form>
+                    </div>
+                </div>
+                <div class="cart-total-price">
+                    <h3 th:text="|Total: ${orderViewModel.totalPrice} BGN|">default total price</h3>
+                </div>
+                <div class="btn-checkout">
+                    <form th:action="@{/orders/buy}" method="POST">
+                        <button id="checkOutBtn" type="submit">Checkout</button>
+                    </form>
+                </div>
+            </th:block>
+        </div>
+    </div>
+
+    <th:block th:if="${isOrderCompleted}">
+        <div class="modal" id="modal" th:object="${orderViewModel}">
+            <div class="modal-content" id="modal-content">
+                <img class="sucess-img" src="/img/icons/success.svg" alt="success-img">
+                <span class="close-btn" id="closeBtn">&times;</span>
+                <h4 class="heading-message">
+                    Purchase was successful
+                </h4>
+                <p>
+                    This part is work in progress.
+                </p>
+                <p>
+                    For the sake of the project the order has automatically arrived at your door and now you are able to
+                    leave a review!
+                </p>
+                <div class="back-to-home">
+                    <a class="go-to-homepage" href="/home">Back to homepage</a>
+                </div>
+            </div>
+        </div>
+    </th:block>
+
+</main>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<script type="text/javascript" src="/js/priceUpdate.js"></script>
+</body>
+</html>

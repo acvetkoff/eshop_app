@@ -1,0 +1,17 @@
+[
+  {
+    "userRole": "ROOT_ADMIN"
+  },
+  {
+    "userRole": "ADMIN"
+  },
+  {
+    "userRole": "MODERATOR"
+  },
+  {
+    "userRole": "USER"
+  },
+  {
+    "userRole": "GUEST"
+  }
+]

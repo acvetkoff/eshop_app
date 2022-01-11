@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Reviews</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/my-reviews.css">
+</head>
+<body>
+<header>
+  <nav th:replace="~{fragments/navigation :: navbar}"></nav>
+</header>
+
+<main>
+  <div th:replace="~{fragments/navigation :: products-navigation-panel}"></div>
+
+  <div class="middle-container">
+    <div class="small-container" >
+      <h3 class="customer-details-heading">Reviews
+        <span class="reviews-count" th:text="|(${comments.size()})|">(0)</span>
+      </h3>
+
+      <div class="reviews" id="reviews" th:each="comment : ${comments}" th:object="${comment}">
+        <div  class="review-wrapper">
+          <div class="stars-wrapper flex-center-justify">
+            <div class="review-stars flex-center-justify">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <p th:text="|*{daysPassed} days ago|">3 days ago</p>
+            </div>
+            <form th:action="@{/products/{productId}/comments/{id} (productId = *{product.id}, id = *{id})}"
+                  th:method="delete">
+              <button class="link-btn" type="submit">Delete review</button>
+            </form>
+          </div>
+          <h5 class="product-review">
+            <a th:href="@{/products/{id} (id = *{product.id})}" th:text="*{product.title}">
+              Marvel's Spider-Man Remastered (PS5)
+            </a>
+          </h5>
+          <div class="review" th:text="*{text}">
+            Great game! One of my favourite games.
+          </div>
+          <div class="goto">
+            <a th:href="@{/products/{id}#reviews (id = *{product.id})}">Go to review</a>
+          </div>
+          <div class="line-placeholder"></div>
+        </div>
+      </div>
+    </div>
+</main>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+</body>
+</html>

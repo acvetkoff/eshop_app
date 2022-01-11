@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eShop - Games</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/product-games.css">
+</head>
+<body>
+
+<header>
+    <nav th:replace="~{fragments/navigation :: navbar}"></nav>
+</header>
+
+<main>
+    <div th:replace="~{fragments/navigation :: products-navigation-panel}"></div>
+
+    <div class="main-container products-section">
+        <section class="left">
+<!--            TODO: to me continued-->
+        </section>
+        <section class="right">
+            <div class="products-sort-panel">
+                <div class="products-text">
+                    <h3>Products</h3>
+                </div>
+                <span class="line-separator"></span>
+                <form >
+                    <label for="products">Sort by</label>
+                    <select id="products" name="products">
+                        <option>Most Popular</option>
+                        <option>Price</option>
+                        <option>Type</option>
+                        <option>Title</option>
+                    </select>
+                </form>
+            </div>
+
+            <div class="products-list">
+                <div th:replace="~{fragments/product-fragments :: games}"></div>
+            </div>
+        </section>
+    </div>
+</main>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+</body>
+</html>

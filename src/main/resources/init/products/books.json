@@ -1,0 +1,80 @@
+[
+  {
+    "type": "BOOK",
+    "title": "Alter of Eden",
+    "price": "9.99",
+    "description": "Baghdad falls... and armed men are seen looting the city zoo. Amid a hail of bullets, a concealed underground lab is ransacked--and something horrific is set loose upon the world.\n\nSeven years later, Louisiana state veterinarian Lorna Polk investigates an abandoned shipwrecked fishing trawler carrying exotic caged animals, part of a black market smuggling ring. But there is something disturbingly wrong with these beasts--each an unsettling mutation of the natural order, all sharing one uncanny trait: incredibly heightened intelligence.\n\nJoining forces with U.S. Border Patrol Agent Jack Menard--a man who shares with her a dark and bloody past--Lorna sets out to uncover the truth about this strange cargo and the terrorist threat it poses. Because a beast escaped the shipwreck and is running amok--and what is about to be born upon the altar of Eden could threaten not only the future of the world but the very foundation of what it means to be human.",
+    "author": "James Rollins",
+    "pages": 528,
+    "releasedOn": "29-12-2009",
+    "genres": [ "ACTION", "ADVENTURE", "SCI_FI" ],
+    "image": {
+      "imagePath": "/img/books/altar_of_eden.jpg"
+    }
+  },
+  {
+    "type": "BOOK",
+    "title": "It",
+    "price": "15.99",
+    "description": "It was the children who saw - and felt - what made the town so horribly different. In the storm drains and sewers 'It' lurked, taking the shape of every nightmare, each one's deepest dread. As the children grow up and move away, the horror of 'It' is buried deep - until they are called back.",
+    "author": "Steven King",
+    "pages": 1138,
+    "releasedOn": "15-06-1986",
+    "genres": [ "HORROR", "MYSTERY" ],
+    "image": {
+      "imagePath": "/img/books/it.jpg"
+    }
+  },
+  {
+    "type": "BOOK",
+    "title": "The Cuckoo's Calling",
+    "price": "15.97",
+    "description": "A brilliant mystery in a classic vein: Detective Cormoran Strike investigates a supermodel's suicide.\nAfter losing his leg to a land mine in Afghanistan, Cormoran Strike is barely scraping by as a private investigator. Strike is down to one client, and creditors are calling. He has also just broken up with his longtime girlfriend and is living in his office.",
+    "author": "Robert Galbraith",
+    "pages": 464,
+    "releasedOn": "04-04-2013",
+    "genres": [ "CRIME", "MYSTERY"],
+    "image": {
+      "imagePath": "/img/books/the_cuckoo_calling.jpg"
+    }
+  },
+  {
+    "type": "BOOK",
+    "title": "1984",
+    "price": "7.48",
+    "description": "Written more than 70 years ago, 1984 was George Orwell’s chilling prophecy about the future. And while 1984 has come and gone, his dystopian vision of a government that will do anything to control the narrative is timelier than ever...",
+    "author": "George Orwell",
+    "pages": 464,
+    "releasedOn": "04-04-2013",
+    "genres": [ "THRILLER" ],
+    "image": {
+      "imagePath": "/img/books/1984.jpg"
+    }
+  },
+  {
+    "type": "BOOK",
+    "title": "Devoted",
+    "price": "12.79",
+    "description": "Woody Bookman hasn’t spoken a word in his eleven years of life. Not when his father died in a freak accident. Not when his mother, Megan, tells him she loves him. For Megan, keeping her boy safe and happy is what matters. But Woody believes a monstrous evil was behind his father’s death and now threatens him and his mother. And he’s not alone in his thoughts. An ally unknown to him is listening.\n\nA uniquely gifted dog with a heart as golden as his breed, Kipp is devoted beyond reason to people. When he hears the boy who communicates like he does, without speaking, Kipp knows he needs to find him before it’s too late.\n\nWoody’s fearful suspicions are taking shape. A man driven by a malicious evil has set a depraved plan into motion. And he’s coming after Woody and his mother. The reasons are primal. His powers are growing. And he’s not alone. Only a force greater than evil can stop what’s coming next.",
+    "author": "Dean Koontz",
+    "pages": 380,
+    "releasedOn": "08-06-1949",
+    "genres": [ "THRILLER", "HORROR" ],
+    "image": {
+      "imagePath": "/img/books/devoted.jpg"
+    }
+  },
+  {
+    "type": "BOOK",
+    "title": "Inferno",
+    "price": "13.00",
+    "description": "Harvard professor of symbology Robert Langdon awakens in an Italian hospital, disoriented and with no recollection of the past thirty-six hours, including the origin of the macabre object hidden in his belongings. With a relentless female assassin trailing them through Florence, he and his resourceful doctor, Sienna Brooks, are forced to flee. Embarking on a harrowing journey, they must unravel a series of codes, which are the work of a brilliant scientist whose obsession with the end of the world is matched only by his passion for one of the most influential masterpieces ever written, Dante Alighieri's The Inferno. ",
+    "author": "Dan Brown",
+    "pages": 480,
+    "releasedOn": "14-05-2013",
+    "genres": [ "THRILLER", "ACTION" ],
+    "image": {
+      "imagePath": "/img/books/inferno.jpg"
+    }
+  }
+]

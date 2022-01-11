@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>Add Review</h1>
+    <th:block th:object="${product}">
+        <form th:action="@{/products/{id}/comments(id = *{id})}" th:method="POST">
+            <label for="text">
+                <textarea name="text" id="text" cols="30" rows="10"></textarea>
+            </label>
+            <button type="submit" value="Add Review">Add Review</button>
+        </form>
+    </th:block>
+
+    <div th:object="${commentServiceModel}">
+        <span th:text="|Comment for product: ${product.title}|"></span>
+        <br>
+        <th:block th:each="c : ${comments}" >
+            <span th:text="|From: ${from}|"></span>
+            <span th:text="|Comment: ${c.text}|"></span>
+            <br>
+        </th:block>
+    </div>
+</div>
+</body>
+</html>

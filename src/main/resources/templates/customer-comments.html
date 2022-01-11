@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Shop - Customer Comments</title>
+</head>
+<body>
+    <h1 style="text-align: center">Comments</h1>
+    <th:block th:each="comment : ${comments}" th:object="${comment}">
+        <div>
+            <p th:text="*{text}"></p>
+            <a class="btn" th:href="@{/products/{id} (id = *{product.id})}" th:text="*{product.title}"></a>
+        </div>
+        <br>
+        <hr style="margin-bottom: 30px">
+    </th:block>
+</body>
+</html>

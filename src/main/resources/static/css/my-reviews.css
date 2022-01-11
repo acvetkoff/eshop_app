@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
+@import "components/navbar.css";
+@import "components/footer.css";
+@import "components/containers.css";
+@import "components/buttons.css";
+@import "utilities/flex.css";
+
+main, body {
+    background-color: rgb(245, 245, 248);
+}
+
+.reviews-count {
+    font-family: Montserrat, serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    color: rgb(130, 130, 130);
+}
+.stars-wrapper {
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+}
+
+.review-stars {
+    padding-top: 10px;
+    color: #F2C94C;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+.review-wrapper p {
+    font-family: Montserrat, serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    padding-left: 8px;
+    color: #828282;
+}
+.product-review a {
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    color: #333333;
+    padding-left: 24px;
+    text-decoration: none;
+}
+.review {
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    color: #333333;
+    padding-left: 24px;
+    padding-top: 8px;
+    margin-bottom: 8px;
+}
+.goto {
+    padding-left: 24px;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+}
+.line-placeholder {
+    width: 1092px;
+    border: 0.5px solid #E0E0E0;
+    background-color: #E0E0E0;
+    margin: 24px auto;
+}

@@ -1,0 +1,95 @@
+@import "components/containers.css";
+@import "components/buttons.css";
+@import "utilities/flex.css";
+@import "settings/reset.css";
+@import "settings/typography.css";
+@import "main.css";
+@import "components/footer.css";
+@import "components/navbar.css";
+
+.table {
+    padding-left: 24px;
+    width: 96%;
+    margin-left: 24px;
+    border-collapse: collapse;
+}
+.table tr {
+    display: grid;
+    grid-template-columns: 2fr 3fr 6fr 3fr 2fr;
+    text-align: left;
+}
+.table tr:nth-child(odd) {
+    background-color: #F4F9FF;
+}
+.table td,
+.table th {
+    padding-left: 10px;
+}
+.table th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #F2F2F2;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+}
+.table td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+.blue {
+    color: #2D9CDB;
+}
+.red {
+    color: #EB5757;
+}
+.bg-primary {
+    background-color: var(--main-color);
+}
+.bg-white {
+    background-color: #fff;
+}
+.bg-main {
+    background-color: var(--main-dark);
+}
+.view-all {
+    margin: 25px auto;
+    text-align: center;
+    width: 100%;
+    padding: 20px 300px;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+}
+.no-orders-message {
+    margin-top: 50px;
+    text-align: center;
+}
+.no-orders-message h3 {
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29px;
+    margin-bottom: 30px;
+}
+.order-link {
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    color: #333333;
+}
+.order-link:hover {
+    text-decoration: underline;
+}

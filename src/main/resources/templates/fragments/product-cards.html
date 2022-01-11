@@ -1,0 +1,63 @@
+<th:block xmlns:th="http://www.thymeleaf.org">
+
+    <div th:fragment="games" >
+        <div class="info">
+            <div class="row" th:each="game : ${products}" th:object="${game}">
+                <h1 class="info-item">Title: <span th:text="*{title}"></span></h1>
+                <h1 class="info-item">Type: <span th:text="*{type}"></span></h1>
+                <h1 class="info-item">Company: <span th:text="*{company}"></span></h1>
+                <form th:action="@{/admin/products/delete/{id}(id = *{id})}" method="POST">
+                    <button class="delete-btn">Delete</button>
+                </form>
+                <a th:href="@{/products/{id}(id = *{id})}" class="view-btn">View</a>
+                <form th:action="@{/orders/add}" method="POST">
+                    <button class="delete-btn">Add to Cart</button>
+                    <input class="delete-btn" type="submit" id="add-to-cart" value="Add to cart">
+                    <input type="hidden" name="productId" th:value="*{id}">
+                    <input type="hidden" name="quantity" value="1">
+                </form>
+                <hr/>
+            </div>
+        </div>
+    </div>
+
+    <div th:fragment="books">
+        <div class="info" >
+            <div class="row" th:each="book : ${products}" th:object="${book}">
+                <h1 class="info-item">Title: <span th:text="*{title}"></span></h1>
+                <h1 class="info-item">Author: <span th:text="*{author}"></span></h1>
+                <h1 class="info-item">Pages: <span th:text="*{pages}"></span></h1>
+                <form th:action="@{/admin/products/delete/{id}(id = *{id})}" method="POST">
+                    <button class="delete-btn">Delete</button>
+                </form>
+                <a th:href="@{/products/{id}(id = *{id})}" class="view-btn">View</a>
+                <form th:action="@{/orders/add}" method="POST">
+                    <button class="delete-btn">Add to Cart</button>
+                    <input type="hidden" name="productId" th:value="*{id}">
+                    <input type="hidden" name="quantity" value="1">
+                </form>
+                <hr/>
+            </div>
+        </div>
+    </div>
+   <div th:fragment="movies">
+       <div class="info" >
+           <div class="row" th:each="movie : ${products}" th:object="${movie}">
+               <h1 class="info-item">Title: <span th:text="*{title}"></span></h1>
+               <h1 class="info-item">Director: <span th:text="*{director}"></span></h1>
+               <h1 class="info-item">IMDB: <span th:text="*{imdbUrl}"></span></h1>
+               <h1 class="info-item">Studio: <span th:text="*{studio}"></span></h1>
+               <form th:action="@{/admin/products/delete/{id}(id = *{id})}" method="POST">
+                   <button class="delete-btn">Delete</button>
+               </form>
+               <a th:href="@{/products/{id}(id = *{id})}" class="view-btn">View</a>
+               <form th:action="@{/orders/add}" method="POST">
+                   <button class="delete-btn">Add to Cart</button>
+                   <input type="hidden" name="productId" th:value="*{id}">
+                   <input type="hidden" name="quantity" value="1">
+               </form>
+               <hr/>
+           </div>
+       </div>
+   </div>
+</th:block>

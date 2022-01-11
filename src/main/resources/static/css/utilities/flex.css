@@ -1,0 +1,16 @@
+/* Display Flex Styling */
+.flex-genres {
+    display: flex;
+    align-items: center;
+    margin-left: -50px;
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-center-justify {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

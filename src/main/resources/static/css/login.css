@@ -1,0 +1,129 @@
+@import "components/footer.css";
+
+:root {
+    --main-color: rgb(245, 245, 248);
+    --main-dark: rgb(51, 51, 51);
+    --orange: rgba(250, 135, 97, 0.644);
+}
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-color);
+    text-align: center;
+}
+.login-container {
+    width: 370px;
+    height: 430px;
+    background-color: #fff;
+    display: inline-block;
+    margin-top: 80px;
+    border-radius: 6px;
+    box-shadow: 0 0 20px 2px rgba(146, 64, 64, 0.2);
+}
+.register-container {
+    width: 370px;
+    height: 570px;
+    max-height: 585px;
+    background-color: #fff;
+    display: inline-block;
+    margin-top: 80px;
+    border-radius: 6px;
+    box-shadow: 0 0 20px 2px rgba(146, 64, 64, 0.2);
+}
+.login-container form h3,
+.register-container form h3{
+    width: 338px;
+    font-size: 24px;
+    color: var(--main-dark);
+    font-weight: 300;
+    margin: 32px auto 31px;
+}
+.username, .pass {
+    width: 338px;
+    height: 40px;
+    border: 0.5px solid var(--orange);
+    border-radius: 6px;
+    margin-bottom: 16px;
+    text-indent: 10px;
+    position: relative;
+}
+::placeholder{
+    padding-left: 10px;
+}
+.fa-eye {
+    color: var(--orange);
+    position: absolute;
+    right: 39%;
+    top: 45%;
+    font-weight: 700;
+    font-size: 18px;
+}
+.fa-eye-slash {
+    color: var(--orange);
+    position: absolute;
+    right: 39%;
+    top: 45%;
+    display: none;
+}
+.remember {
+    width: 338px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto 15px;
+}
+.remember .check {
+    font-size: 13px;
+    font-weight: 500;
+}
+.remember .forgotten {
+    text-decoration: underline;
+    font-size: 13px;
+    font-weight: 500;
+}
+.btn {
+    display: block;
+    width: 338px;
+    height: 40px;
+    background-color: var(--orange);
+    border: none;
+    margin: auto auto 16px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+.btn-fb{
+    display: block;
+    width: 338px;
+    height: 40px;
+    background-color: rgb(84, 120, 249);
+    border: none;
+    margin: auto auto 26px;
+    font-weight: 500;
+}
+.btn:hover,
+.btn-fb:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+form p {
+    font-weight: 450;
+    font-size: 13px;
+}
+form p a {
+    text-decoration: underline;
+}
+.error-message {
+    font-size: 13px;
+    font-weight: 400;
+    color: #EB5757;
+    margin-bottom: 3px;
+}
+.error-border {
+    border-color: #EB5757;
+}
+.login-err {
+    font-weight: 550;
+    font-size: 15px;
+    margin-bottom: 10px;
+}

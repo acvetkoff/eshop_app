@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>Users:</h1>
+    <div th:each="user : ${users}">
+        <h1>Created: <span th:text="${user.createdOn}"></span></h1>
+        <h1>Email: <span th:text="${user.email}"></span></h1>
+        <h1>Username: <span th:text="${user.username}"></span></h1>
+        <h1>Roles:
+        <ul th:each="role : ${user.roles}">
+            <li th:text="${role}"></li>
+        </ul>
+        </h1>
+        <h1>Customer First Name: <span th:text="${user.customer.firstName}"></span></h1>
+        <h1>Customer Last Name: <span th:text="${user.customer.lastName}"></span></h1>
+        <h1>Customer Phone: <span th:text="${user.customer.phone}"></span></h1>
+        <h1>Customer Address: <span th:text="${user.customer.address}"></span></h1>
+
+
+        <form th:action="@{/admin/users/{id}/delete(id = *{user.id})}" method="POST">
+            <button>Delete</button>
+        </form>
+        <div>
+        <a th:href="@{/admin/orders/user/{id}(id = ${user.id})}">View Orders</a>
+        <a th:href="@{/admin/comments/users/{id}(id = ${user.id})}">View Comments</a>
+        <a th:href="@{/admin/users/{id}(id = ${user.id})}">View</a>
+        </div>
+        <hr/>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+/* Styles for buttons */
+
+.btn-primary {
+    background-color: var(--orange);
+    padding: 8px 24px;
+    border-radius: 6px;
+    width: 107px;
+    height: 41px;
+}
+.btn-primary:hover {
+    color: var(--main-dark);
+}
+.link-btn {
+    padding-right: 24px;
+    background: none!important;
+    border: none;
+    cursor: pointer;
+    font-family: Montserrat, serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    color: #EB5757
+}
+.link-btn:hover{
+    text-decoration: underline;
+}
+.star-btn {
+    border:none;
+    background: none;
+    color: var(--orange);
+    font-size: 18px;
+    margin-left: 17px;
+}
+.btn-homepage {
+    width: 240px;
+    height: 41px;
+    border-radius: 6px;
+    background-color: rgb(250, 135, 97);
+    opacity: 0.8;
+    margin: 50px auto;
+    padding: 10px 30px;
+    color: #fff;
+    text-decoration: none;
+}

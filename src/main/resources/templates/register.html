@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/components/navbar.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+<header>
+    <nav th:replace="~{fragments/navigation :: navbar}"></nav>
+</header>
+<main>
+    <div class="register-container">
+        <form action="/users/register" method="POST" th:object="${userRegisterBindingModel}">
+            <h3>Register</h3>
+            <div th:if="${invalidCredentials}" th:text="${usernameErrorMessage}" class="error-message">E</div>
+            <div th:if="${userExists}" th:text="${existsMessage}" class="error-message">E</div>
+            <div class="input-container">
+                <label for="username">
+                    <input th:field="*{username}" th:errorclass="error-border"
+                           th:classappend="${userExists} ?  'error-border'"
+                           class="username input" type="text" id="username" name="username" placeholder="Username"
+                           autofocus
+                           required>
+                </label>
+            </div>
+            <div th:if="${invalidCredentials}" th:text="${emailErrorMessage}" class="error-message">E</div>
+            <div class="input-container">
+                <label for="email">
+                    <input th:field="*{email}"
+                           th:errorclass="error-border"
+                           class="pass"
+                           type="email"
+                           id="email"
+                           name="email"
+                           placeholder="Email"
+                           required>
+                </label>
+            </div>
+            <div th:if="${invalidCredentials}" th:text="${passwordErrorMessage}" class="error-message">E</div>
+            <div class="input-container">
+                <label for="password">
+                    <input th:errorclass="error-border" class="pass" type="password" id="password" name="password"
+                           placeholder="Password"
+                           required>
+                </label>
+            </div>
+            <div th:if="${invalidCredentials}" th:text="${confirmPassErrorMessage}" class="error-message"></div>
+            <div class="input-container">
+                <label for="confirmPassword">
+                    <input th:errorclass="error-border" class="pass" type="password" id="confirmPassword"
+                           name="confirmPassword"
+                           placeholder="Confirm password" required>
+                </label>
+            </div>
+            <div class="remember">
+                <div class="check">
+                    <label for="terms"></label>
+                    <input id="terms" type="checkbox" checked> <span>I agree to the <a href="">Terms &
+                                Conditions</a></span>
+                </div>
+            </div>
+            <button class="btn" type="submit" value="Register">Register</button>
+            <p class="bottom-text">Already have an account? <a href="/users/login">Log in.</a></p>
+        </form>
+    </div>
+</main>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+</body>
+</html>

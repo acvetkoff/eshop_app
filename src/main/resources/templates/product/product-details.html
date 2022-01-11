@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/product-details.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<header>
+    <nav th:replace="~{fragments/navigation :: navbar}"></nav>
+</header>
+<main>
+
+    <div th:replace="~{fragments/navigation :: products-navigation-panel}"></div>
+
+    <div class="main-container product-container">
+
+        <!-- Product description section starts here -->
+
+        <div class="showcase" th:object="${product}">
+            <div class="product-image">
+                <img th:src="@{|*{image.imagePath}|}" alt="product-img">
+            </div>
+            <div class="product-desc ">
+                <h1 class="title" th:text="*{title}">Name placeholder</h1>
+                <div class="stars flex-center">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <!-- TODD: implement rating -->
+                    <p class="rating">4.31 <a href="#reviews" id="rating">(31 reviews)</a></p>
+                </div>
+                <div class="line"></div>
+
+                <div class="description" th:text="*{#strings.abbreviate(description, 400)}">
+
+                    <span class="tooltiptext" th:text="*{description}"></span>
+
+                </div>
+
+                <div class="pair">
+                    <p class="genre-detail-key">
+                        Genre
+                    </p>
+                    <p class="genre-detail-value" th:text="*{#strings.arrayJoin(genres, ', ')}">
+                        Genres placeholder
+                    </p>
+                </div>
+                <div class="pair">
+                    <p class="genre-detail-key">
+                        Year
+                    </p>
+                    <p class="genre-detail-value" th:text="*{releasedOn.getYear()}">
+                        Year placeholder
+                    </p>
+                </div>
+                <div class="pair">
+                    <p class="genre-detail-key">
+                        Studio/Author:
+                    </p>
+
+                    <div th:replace="~{fragments/product-fragments :: product-creator}"></div>
+                </div>
+                <div class="product-price-detail" th:text="|*{price} BGN|"></div>
+                <form th:action="@{/orders/add}" method="POST">
+                    <div class="add-to-cart flex-center">
+                        <div class="spinner flex-center">
+                            <div class="decrement" onclick="decrement()">
+                                <p>-</p>
+                            </div>
+                            <label for="quantity">
+                                <input type="number" id="quantity" value="1" min="0" class="number-spinner">
+                            </label>
+                            <div class="increment" onclick="increment()">
+                                <p>+</p>
+                            </div>
+                        </div>
+
+                        <label for="add-to-cart">
+                            <input class="add-btn" type="submit" id="add-to-cart" value="Add to cart">
+                            <input type="hidden" name="productId" th:value="*{id}">
+                            <input type="hidden" name="quantity" th:value="1">
+                            <input type="hidden" name="currentPageURI" th:value="${currentPageURI}">
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Product section starts here-->
+        <div th:replace="~{fragments/product-fragments :: product-details}"></div>
+
+        <div class="reviews" id="reviews">
+            <h3 class="customer-details-heading">Reviews
+                <span class="reviews-count" th:text="|(${comments.size()})|">(default)</span>
+            </h3>
+            <div class="review-wrapper" th:each="comment : ${comments}" th:object="${comment}">
+                <div class="stars-wrapper flex-center-justify">
+                    <div class="review-stars flex-center-justify">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <p th:text="|*{daysPassed} days ago|"></p>
+                    </div>
+
+                    <th:block th:if="*{fromUsername.equals(#authentication.getName())}">
+                        <form th:action="@{/products/{id}/deleteComment/{commentId} (id = *{product.id}, commentId = *{id})}"
+                              th:method="delete">
+                            <button class="link-btn" type="submit">Delete review</button>
+                        </form>
+                    </th:block>
+
+                </div>
+                <h5 class="review-author" th:text="*{fromUsername}">dadsa</h5>
+                <div class="review" th:text="*{text}">this is comment</div>
+                <div class="line-placeholder"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Product section ends here-->
+
+    <!--Related products section starts here-->
+    <h2 class="related-products-heading main-container product-container">Related products</h2>
+    <section th:replace="~{fragments/product-fragments :: related-products}"></section>
+    <!--Related products section ends here-->
+
+</main>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<script src="/js/script.js"></script>
+</body>
+</html>

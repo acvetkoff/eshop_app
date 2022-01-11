@@ -1,0 +1,18 @@
+/* Styles for containers */
+
+.main-container {
+    justify-content: space-between;
+    max-width: 1140px;
+    width: 1140px;
+    margin: 0 auto;
+    height: 100%;
+}
+.middle-container {
+    width: 1140px;
+    margin: 24px auto 50px;
+    background-color: #fff;
+    border-radius: 6px;
+}
+.small-container {
+    padding: 25px;
+}

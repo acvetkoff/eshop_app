@@ -1,0 +1,130 @@
+@import "containers.css";
+@import "../settings/reset.css";
+@import "../settings/variables.css";
+@import "../utilities/flex.css";
+@import "buttons.css";
+@import "../settings/typography.css";
+
+header {
+    width: 100vw;
+    height: 65px;
+    background-color: var(--main-dark);
+    padding: 10px 0%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.logo > a {
+    color: white;
+    display: inline;
+    font-size: 35px;
+}
+.shop-text {
+    color: var(--orange);
+}
+.search-icon {
+    width: 300px;
+    background-color: black;
+}
+.nav-icons li {
+    margin-right: 20px;
+}
+.nav-icons li a {
+    color: white;
+}
+.nav-icon {
+    font-size: 14px;
+}
+.nav-middle .fa-search {
+    width: 25px;
+    height: 30px;
+    position: absolute;
+    right: 12px;
+    top: 2px;
+    bottom: 0;
+    border-radius: 5px;
+    margin-top: 12px;
+}
+.nav-middle .search-box {
+    padding: 8px 12px;
+    border: 10px;
+    color: var(--main-dark);
+    font-weight: 800;
+    position: relative;
+}
+.nav-middle .search-box input {
+    width: 410px;
+    height: 30px;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    position: relative;
+}
+.nav-middle .search-box input[placeholder]{
+    padding-left: 15px;
+    font-weight: 200;
+}
+.fa-shopping-cart {
+    font-size: 25px;
+}
+.btn-logout {
+    color: #fff;
+    font-weight: 450;
+}
+.logged-in-items-wrapper .logged-in-items li {
+    padding-left: 24px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+}
+.logged-in-items-wrapper .logged-in-items li a {
+    color: white;
+}
+.logged-in-item button {
+    background: none;
+    color: white;
+    border: none;
+}
+.logged-in-item button:hover {
+    cursor: pointer;
+}
+.badge:after{
+    content:attr(value);
+    font-size:12px;
+    background: var(--orange);
+    color: white;
+    border-radius:50%;
+    padding:3px;
+    position:relative;
+    left:-8px;
+    top:-10px;
+    border: 1px solid #FFFFFF;
+    width: 16px;
+    height: 16px;
+}
+
+
+.products-navigation-panel {
+    background-color: #fff;
+    height: 50px;
+}
+.product-types {
+    display: flex;
+    align-items: center;
+    height: inherit;
+}
+.product-type {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-right: 55px;
+}
+.product-type a {
+    color: #333333;
+}

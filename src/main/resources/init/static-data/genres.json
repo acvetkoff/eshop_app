@@ -1,0 +1,47 @@
+[
+  {
+    "type": "GENRE",
+    "key": "ACTION",
+    "value": "Action"
+  },
+  {
+    "type": "GENRE",
+    "key": "DRAMA",
+    "value": "Drama"
+  },
+  {
+    "type": "GENRE",
+    "key": "HORROR",
+    "value": "Horror"
+  },
+  {
+    "type": "GENRE",
+    "key": "THRILLER",
+    "value": "Thriller"
+  },
+  {
+    "type": "GENRE",
+    "key": "COMEDY",
+    "value": "Comedy"
+  },
+  {
+    "type": "GENRE",
+    "key": "ADVENTURE",
+    "value": "Adventure"
+  },
+  {
+    "type": "GENRE",
+    "key": "MYSTERY",
+    "value": "Mystery"
+  },
+  {
+    "type": "GENRE",
+    "key": "CRIME",
+    "value": "Crime"
+  },
+  {
+    "type": "GENRE",
+    "key": "SCI_FI",
+    "value": "Sci-Fi"
+  }
+]

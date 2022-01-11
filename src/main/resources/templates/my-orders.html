@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop - My Orders</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/my-orders.css">
+</head>
+
+<body>
+<header>
+    <nav th:replace="~{fragments/navigation :: navbar}"></nav>
+</header>
+<main>
+    <div th:replace="~{fragments/navigation :: products-navigation-panel}"></div>
+
+    <div class="middle-container">
+        <div class="small-container">
+            <h3 class="customer-details-heading">My Orders</h3>
+            <div class="small-container" th:if="${noOrders}">
+                <div class="no-orders-message">
+                    <h3 class="center">You haven't ordered anything yet.</h3>
+                    <div class="center">
+                        <a class="btn-homepage" th:href="@{/home}">Go to homepage</a>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table" th:unless="${noOrders}">
+                <tr>
+                    <th>Order</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+                <tr th:each="order : ${orders}" th:object="${order}">
+                    <td>
+                        <a th:href="@{/orders/{id}(id = *{id})}" th:text="'#'+*{#strings.substring(id, 0, 6)}"
+                           class="order-link"></a>
+                    </td>
+                    <td th:text="|*{#temporals.monthName(createdOn)} *{#temporals.day(createdOn)}, *{#temporals.year(createdOn)}|">
+                        date placeholder
+                    </td>
+                    <td th:text="*{#strings.capitalize(status.name())}">status placeholder</td>
+                    <td th:text="|*{totalPrice} BGN|">price placeholder</td>
+                    <td>
+                        <a th:href="@{/orders/{id} (id = *{id})}" class="order-link blue">View</a>
+                        <button class="link-btn red"></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <th:block th:unless="${noOrders}">
+        <h2 class="related-products-heading main-container product-container">
+            Suggested products
+        </h2>
+
+        <section class="related-products main-container bg-primary">
+            <div class="flex-center-justify">
+                <th:block th:each="product : ${suggested}" th:object="${product}">
+                    <a th:href="@{/products/{id}(id = *{id})}">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img th:src="@{|*{image.imagePath}|}" alt="product pic">
+                            </div>
+                            <div class="stars flex-center">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <p class="rating">4.31 (31)</p>
+                            </div>
+                            <h4 th:text="*{#strings.abbreviate(title, 20)}" class="product-title">Last of Us II</h4>
+                            <p class="author-genre" th:text="*{#strings.arrayJoin(genres, ', ')}"></p>
+                            <div class="product-price flex-center">
+                                <h3 th:text="*{price}" class="price">89.00</h3><span>USD</span>
+                            </div>
+                        </div>
+                    </a>
+                </th:block>
+            </div>
+        </section>
+        <div class="view-all">
+            <a href="">View all</a>
+        </div>
+    </th:block>
+</main>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+</body>
+</html>

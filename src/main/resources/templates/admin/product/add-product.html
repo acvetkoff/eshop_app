@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>Add Product</h1>
+    <div>
+        <form th:action="@{/admin/products/add}" method="post"
+              enctype="multipart/form-data">
+            <div>
+                <label>Title: </label>
+                <input type="text" id="title" name="title"/>
+                <br/>
+                <label>Description: </label>
+                <input type="text" name="description" id="description" cols="30" rows="10"></input>
+                <br/>
+                <label>Price: </label>
+                <input type="text" name="price" id="price" cols="30" rows="10"/>
+                <br/>
+                <label>Type: </label>
+                <select id="types" name="types" th:field="${productBindingModel.type}">
+                    <option th:each="type : ${types}" th:value="${type}" th:utext="${type.name()}"/>
+                </select>
+                <br/>
+                <label>Genres: </label>
+                <select id="genres" name="genres" th:field="${productBindingModel.genres}" multiple="multiple">
+                    <option th:each="genre : ${predefinedGenres}" th:value="${genre.key}" th:utext="${genre.value}"/>
+                </select>
+                <br/>
+
+                <label>Poster: </label>
+                <input type="file" name="file" accept="image/png, image/jpeg, image/jpg"/>
+
+                <br/>
+                <button type="submit" value="Add Poster">Add Poster</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

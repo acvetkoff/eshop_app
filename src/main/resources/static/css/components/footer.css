@@ -1,0 +1,33 @@
+footer {
+    width: 100vw;
+    height: 200px;
+    background-color: var(--main-dark);
+}
+footer .main-container {
+    display: flex;
+    justify-content: space-between;
+}
+footer .main-container .left-side .logo {
+    margin-top: 29px;
+    margin-bottom: 12px;
+}
+footer .main-container .left-side  p,
+footer .main-container .right-side p {
+    width: 193px;
+    height: 68px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 400;
+}
+footer .main-container .right-side p {
+    margin-top: 29px;
+}
+footer .main-container .right-side ul i {
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-right: 12px;
+    padding: 7px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 50%;
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "type": "PLATFORM",
+    "key": "PS",
+    "value": "Play Station"
+  },
+  {
+    "type": "PLATFORM",
+    "key": "PC",
+    "value": "PC"
+  },
+  {
+    "type": "PLATFORM",
+    "key": "XBOX",
+    "value": "Xbox"
+  },
+  {
+    "type": "PLATFORM",
+    "key": "NINTENDO",
+    "value": "Nintendo"
+  },
+  {
+    "type": "PLATFORM",
+    "key": "MOBILE",
+    "value": "Mobile"
+  }
+]

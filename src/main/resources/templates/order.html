@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:object="${order}">
+        <h3>Order number: </h3>
+        <p th:text="*{#strings.substring(id, 0, 6)}"></p>
+    </div>
+</body>
+</html>

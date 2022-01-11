@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
+.customer-details-heading {
+    font-family: Montserrat, serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29px;
+    padding-left: 24px;
+    padding-top: 24px;
+    padding-bottom: 27px;
+}
+.related-products-heading {
+    margin-top: 60px;
+    margin-bottom: 35px;
+    text-align: center;
+    background-color: var(--main-color);
+}

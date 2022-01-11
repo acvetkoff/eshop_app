@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop - My Orders</title>
+    <link rel="stylesheet" href="my-orders.css">
+</head>
+
+<body>
+<header>
+</header>
+
+<main>
+    <div class="types"></div>
+    <div class="middle-container">
+        <div class="small-container">
+            <div class="cart-heading">
+                <h3>Cart</h3>
+            </div>
+            <div class="cart-headings">
+                <p>Product</p>
+                <p>Price</p>
+                <p>Quantity</p>
+                <p>Total</p>
+            </div>
+            <div class="cart-item">
+                <div class="cart-product">
+                    <div class="cart-image">
+                        <img src="./half_life_2.png" alt="">
+                    </div>
+                    <div class="cart-product-title">
+                        <div class="cart-category">
+                            <p>Game</p>
+                        </div>
+                        <div class="cart-title">
+                            <a href="/product/id">
+                                Marvel's Spider-Man Remastered (PS5)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item-price">
+                    <p>139 BGN</p>
+                </div>
+
+                <div class="cart-quantity">
+                    <div class="add-to-cart flex-center">
+                        <div class="spinner flex-center">
+                            <div class="decrement" onclick="decrement()">
+                                <p>-</p>
+                            </div>
+                            <label for="quantity">
+                                <input type="number" id="quantity" value="1" min="0" class="number-spinner">
+                            </label>
+                            <div class="increment" onclick="increment()">
+                                <p>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item-price total">
+                    <p>139 BGN</p>
+                    <form action="" method="POST">
+                        <img class="trash-can" src="./trash-can-solid.svg" alt="">
+                    </form>
+                </div>
+                <div class="cart-line-separator"></div>
+            </div>
+
+            <div class="cart-item">
+                <div class="cart-product">
+                    <div class="cart-image">
+                        <img src="./last_of_us_II.png" alt="">
+                    </div>
+                    <div class="cart-product-title">
+                        <div class="cart-category">
+                            <p>Game</p>
+                        </div>
+                        <div class="cart-title">
+                            <a href="/product/id">
+                                Last of Us Part II
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item-price">
+                    <p>139 BGN</p>
+                </div>
+                <div class="cart-quantity">
+                    <div class="add-to-cart flex-center">
+                        <div class="spinner flex-center">
+                            <div class="decrement" onclick="decrement()">
+                                <p>-</p>
+                            </div>
+                            <label for="quantity">
+                                <input type="number" id="quantity" value="1" min="0" class="number-spinner">
+                            </label>
+                            <div class="increment" onclick="increment()">
+                                <p>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item-price total">
+                    <p>139 BGN</p>
+                    <form action="" method="POST">
+                        <img class="trash-can" src="./trash-can-solid.svg" alt="">
+                    </form>
+                </div>
+                <div class="cart-line-separator"></div>
+            </div>
+
+            <div class="cart-item">
+                <div class="cart-product">
+                    <div class="cart-image">
+                        <img src="./it.jpg" alt="">
+                    </div>
+                    <div class="cart-product-title">
+                        <div class="cart-category">
+                            <p>Book</p>
+                        </div>
+                        <div class="cart-title">
+                            <a href="/product/id">
+                                It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item-price">
+                    <p>139 BGN</p>
+                </div>
+                <div class="cart-quantity">
+                    <div class="add-to-cart flex-center">
+                        <div class="spinner flex-center">
+                            <div class="decrement" onclick="decrement()">
+                                <p>-</p>
+                            </div>
+                            <label for="quantity">
+                                <input type="number" id="quantity" value="1" min="0" class="number-spinner">
+                            </label>
+                            <div class="increment" onclick="increment()">
+                                <p>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item-price total">
+                    <p>139 BGN</p>
+                    <form action="" method="POST">
+                        <img class="trash-can" src="./trash-can-solid.svg" alt="">
+                    </form>
+                </div>
+                <div class="cart-line-separator"></div>
+            </div>
+            <div class="cart-total-price">
+                <h3>Total: 260 BGN</h3>
+            </div>
+            <div class="btn-checkout">
+                <form th:action="@{/orders/buy}" method="POST">
+                    <button type="submit">Checkout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="/js/script.js"></script>
+</body>
+</html>

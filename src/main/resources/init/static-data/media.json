@@ -1,0 +1,22 @@
+[
+  {
+    "type": "MEDIA",
+    "key": "DVD",
+    "value": "Dvd"
+  },
+  {
+    "type": "MEDIA",
+    "key": "BLUE_RAY",
+    "value": "Blu-ray"
+  },
+  {
+    "type": "MEDIA",
+    "key": "BLUE_RAY_3D",
+    "value": "Blu-Ray-3D"
+  },
+  {
+    "type": "MEDIA",
+    "key": "BLUE_RAY_4D_4K_UHD",
+    "value": "Blu-Ray 4D 4K UHD"
+  }
+]

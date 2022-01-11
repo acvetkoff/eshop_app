@@ -1,0 +1,85 @@
+<th:block xmlns:th="http://www.thymeleaf.org"
+          xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <nav th:fragment="navbar">
+        <div class="main-container flex-center">
+            <h1 class="logo">
+                <th:block sec:authorize="isAnonymous()">
+                    <a th:href="@{/}">
+                        e<span class="shop-text">Shop</span>
+                    </a>
+                </th:block>
+                <th:block sec:authorize="isAuthenticated()">
+                    <a th:href="@{/home}">
+                        e<span class="shop-text">Shop</span>
+                    </a>
+                </th:block>
+            </h1>
+            <div class="nav-middle flex-center">
+                <div class="search-box flex-center">
+                    <label for="search">
+                        <input type="text" placeholder="Search..." id="search"/>
+                        <i class="fa fa-search"></i>
+                    </label>
+                </div>
+            </div>
+            <th:block sec:authorize="isAnonymous()" >
+                <ul class="nav-icons flex-center">
+                    <li class="nav-icon">
+                        <a class="btn-primary" href="/users/register">Register</a>
+                    </li>
+                    <li class="nav-icon">
+                        <a href="/users/login">Log in</a>
+                    </li>
+
+                </ul>
+            </th:block>
+
+            <th:block sec:authorize="isAuthenticated()">
+                <form th:action="@{/logout}" method="POST">
+
+                    <div class="logged-in-items-wrapper">
+                        <ul class="logged-in-items flex-center">
+                            <li class="logged-in-item">
+                                <a href="/customers/profile/orders">My orders</a>
+                            </li>
+                            <li class="logged-in-item">
+                                <a href="/customers/profile/comments">My reviews</a>
+                            </li>
+                            <li class="logged-in-item">
+                                <a href="/customers/profile">My profile</a>
+                            </li>
+                            <li class="logged-in-item">
+                                <button>Log out</button>
+                            </li>
+                            <li>
+                                <a href="/orders/details">
+                                    <i class="fa fa-shopping-cart badge" th:value="${quantity}"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </th:block>
+        </div>
+    </nav>
+
+    <div th:fragment="products-navigation-panel">
+        <div class="products-navigation-panel">
+            <div class="main-container">
+                <ul class="product-types">
+                    <li class="product-type">
+                        <a href="/products/games">Games</a>
+                    </li>
+                    <li class="product-type">
+                        <a href="/products/books">Books</a>
+                    </li>
+                    <li class="product-type">
+                        <a href="/products/movies">Movies</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</th:block>

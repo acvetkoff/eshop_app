@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>Order Detail::</h1>
+    <div>
+        <h1>Address: <span th:text="${order.address}"></span></h1>
+        <h1>Status: <span th:text="${order.status}"></span></h1>
+        <h1>Company: <span th:text="${order.totalPrice}"></span></h1>
+        <form th:action="@{/admin/orders/{id}/delete(id = *{order.id})}" method="POST">
+            <button>Delete</button>
+        </form>
+        <a th:href="@{/admin/orders/{id}(id = ${order.id})}">View</a>
+        <hr/>
+    </div>
+</div>
+</body>
+</html>

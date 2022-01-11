@@ -1,0 +1,44 @@
+[
+  {
+    "username": "aleks",
+    "password": "admin",
+    "confirmPassword": "admin",
+    "email": "sanker3590@gmail.com",
+    "confirmEmail": "sanker3590@gmail.com",
+    "customer": {
+      "firstName": "Alexander",
+      "lastName": "Cvetkov",
+      "phone": "+359883 83 75 31",
+      "address": "'Hadji Dimitur, bl.19, floor 5, app.13'"
+    },
+    "roles": ["ROOT_ADMIN", "ADMIN"]
+  },
+  {
+    "username": "gosho",
+    "password": "123",
+    "confirmPassword": "123",
+    "email": "gosho@gmail.com",
+    "confirmEmail": "gosho@gmail.com",
+    "customer": {
+      "firstName": "Georgi",
+      "lastName": "Georgiev",
+      "phone": "+359888 11 22 31",
+      "address": "Gosho's adress"
+    },
+    "roles": ["USER"]
+  },
+  {
+    "username": "pesho",
+    "password": "123",
+    "confirmPassword": "123",
+    "email": "pesho@gmail.com",
+    "confirmEmail": "pesho@gmail.com",
+    "customer": {
+      "firstName": "Pesho",
+      "lastName": "Peshov",
+      "phone": "+359883 83 25 12",
+      "address": "Pesho's address"
+    },
+    "roles": ["MODERATOR"]
+  }
+]

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>Add Product</h1>
+    <div>
+        <form th:action="@{/admin/products/{id}/uploadPoster(id = *{id})}" th:object="${product}" method="post"
+              enctype="multipart/form-data" >
+            <div>
+                <h1>Title: <span th:text="${product.title}"></span></h1>
+                <h1>Type:<span th:text="${product.type}"></span></h1>
+                <h1>Description: <span th:text="${product.description}"></span></h1>
+                <h1>Price: <span th:text="${product.price}"></span></h1>
+                <h1>Genres:</h1>
+
+                <table>
+                    <tr th:each="genre : ${product.genres}">
+                        <td th:text="${genre}"></td>
+                    </tr>
+                </table>
+
+                <div>
+                <label>Poster: </label>
+                <input type="file" name="poster" accept="image/png, image/jpeg, image/jpg" />
+                 <div>
+                     <button type="submit" value="Add Poster">Add Poster</button>
+            </div>
+        </form>
+        <img th:src="|@{${product.image.imagePath}}|" />
+    </div>
+</div>
+</body>
+</html>
