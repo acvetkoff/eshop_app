@@ -1,11 +1,13 @@
 changeMainImage();
 
 function changeMainImage() {
+    document.getElementById("main-image").src = '/img/0.jpg';
     setInterval(randomImage, 3000);
 
     function randomImage() {
-        let imageIndexes = [ "1", "2", "3", "4", "5", "6", "7", "8", "9" ];
+        let imageIndexes = [ "0", "1", "2", "3", "4", "5", "6", "7", "8" ];
         let randomIndex = Math.floor(Math.random() * imageIndexes.length);
+        console.log(`/img/${randomIndex}.jpg`);
         document.getElementById("main-image").src = `/img/${randomIndex}.jpg`;
     }
 }

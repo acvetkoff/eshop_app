@@ -7,5 +7,7 @@ public abstract class BaseReferencedDataToStringConverter<T extends ReferencedDa
     @Override
     public String convert(MappingContext<T, String> mappingContext) {
         return mappingContext.getSource() == null ? null : mappingContext.getSource().getKey();
+
+        //HORROR
     }
 }

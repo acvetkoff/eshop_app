@@ -13,6 +13,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -138,7 +139,7 @@ class ProductRepositoryTest {
         // When
         List<Product> actualProducts = this.productRepository.findByType(null);
 
-        List<Product> expectedProducts = List.of();
+        List<Product> expectedProducts = Collections.emptyList();
 
         // Then
         assertThat(actualProducts).isEqualTo(expectedProducts);

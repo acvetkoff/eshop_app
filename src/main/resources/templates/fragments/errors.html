@@ -1,0 +1,7 @@
+<th:block xmlns:th="http://www.thymeleaf.org">
+    <main th:fragment="errors(errorStatus, errorText, errorImg)">
+        <h1 class="error-heading" th:text="${errorStatus}"></h1>
+        <p class="error-text" th:text="${errorText}">asdasd</p>
+        <img class="error-image" th:src="${errorImg}" alt="error image">
+    </main>
+</th:block>

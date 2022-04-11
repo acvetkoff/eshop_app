@@ -9,7 +9,4 @@ public interface ModelParser {
     <S, D> void convert(S source, D dest);
 
     <S, D> List<D> convert(List<S> sourceList, Class<D> destination);
-
-    //ТОДО: fix this
-    //void setGenreRepository(GenreRepository repository);
 }

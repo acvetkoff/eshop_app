@@ -13,13 +13,11 @@
     <nav th:replace="~{fragments/navigation :: navbar}"></nav>
 </header>
 <main>
-
     <div th:replace="~{fragments/navigation :: products-navigation-panel}"></div>
 
     <div class="main-container product-container">
 
         <!-- Product description section starts here -->
-
         <div class="showcase" th:object="${product}">
             <div class="product-image">
                 <img th:src="@{|*{image.imagePath}|}" alt="product-img">
@@ -38,9 +36,7 @@
                 <div class="line"></div>
 
                 <div class="description" th:text="*{#strings.abbreviate(description, 400)}">
-
                     <span class="tooltiptext" th:text="*{description}"></span>
-
                 </div>
 
                 <div class="pair">
@@ -122,17 +118,32 @@
                 <div class="review" th:text="*{text}">this is comment</div>
                 <div class="line-placeholder"></div>
             </div>
+            <div class="review-section">
+                <p class="rate">Rate this product</p>
+                <div class="empty-stars">
+                    <img src="/img/icons/empty-star.svg" alt="empty-star">
+                    <img src="/img/icons/empty-star.svg" alt="empty-star">
+                    <img src="/img/icons/empty-star.svg" alt="empty-star">
+                    <img src="/img/icons/empty-star.svg" alt="empty-star">
+                    <img src="/img/icons/empty-star.svg" alt="empty-star">
+                </div>
+
+                <p class="leave-review-text">Leave a review</p>
+                <form th:action="@{/products/{id}/comments(id = *{product.id})}" th:method="POST">
+                    <textarea placeholder="Leave your review here..." class="review-textarea" name="text" id="comment" cols="30" rows="10"></textarea>
+                    <button class="review-btn">Post review</button>
+                </form>
+            </div>
         </div>
     </div>
     <!-- Product section ends here-->
 
     <!--Related products section starts here-->
-    <h2 class="related-products-heading main-container product-container">Related products</h2>
+    <h2 class="related-products-heading main-container">Related products</h2>
     <section th:replace="~{fragments/product-fragments :: related-products}"></section>
     <!--Related products section ends here-->
-
 </main>
 <footer th:replace="~{fragments/footer :: footer}"></footer>
-<script src="/js/script.js"></script>
+<script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>

@@ -194,7 +194,7 @@ public class ProductServiceImplTest {
     @Test
     void getByType_givenValidType_ShouldReturnCorrectProduct() {
         // When
-        this.productService.getByType(GAME);
+        this.productService.getByType("GAME");
         // Then
         verify(this.productRepository, times(METHOD_INVOCATIONS)).findByType(GAME);
     }

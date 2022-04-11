@@ -2,16 +2,12 @@ package bg.softuni.eshop.product.service;
 
 
 import bg.softuni.eshop.product.model.binding.SearchProductCriteriaDTO;
-import bg.softuni.eshop.product.model.entity.GenreEntity;
-import bg.softuni.eshop.product.model.entity.Product;
 import bg.softuni.eshop.product.model.enums.ProductType;
 import bg.softuni.eshop.product.model.service.GameServiceModel;
 import bg.softuni.eshop.product.model.service.ProductServiceModel;
 
 import java.math.BigDecimal;
-import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 public interface ProductService {
 
@@ -21,7 +17,7 @@ public interface ProductService {
 
     List<ProductType> getProductTypes();
 
-    List<ProductServiceModel> getByType(ProductType productType);
+    List<ProductServiceModel> getByType(String productType);
 
     ProductServiceModel getById(String id);
 
@@ -38,4 +34,6 @@ public interface ProductService {
     List<ProductServiceModel> findTop6();
 
     List<ProductServiceModel> getByGenresKeyIn(String[] genres);
+
+    List<ProductServiceModel> sortBy(String type, String criteria);
 }

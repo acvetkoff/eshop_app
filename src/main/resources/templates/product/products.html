@@ -19,27 +19,13 @@
 
     <div class="main-container products-section">
         <section class="left">
-<!--            TODO: to me continued-->
+            <!--            TODO: to me continued-->
         </section>
         <section class="right">
-            <div class="products-sort-panel">
-                <div class="products-text">
-                    <h3>Products</h3>
-                </div>
-                <span class="line-separator"></span>
-                <form >
-                    <label for="products">Sort by</label>
-                    <select id="products" name="products">
-                        <option>Most Popular</option>
-                        <option>Price</option>
-                        <option>Type</option>
-                        <option>Title</option>
-                    </select>
-                </form>
-            </div>
+            <div th:replace="~{fragments/product-fragments :: products-sort-panel(type=${type})}"></div>
 
             <div class="products-list">
-                <div th:replace="~{fragments/product-fragments :: games}"></div>
+                <div th:replace="~{fragments/product-fragments :: productsByType(products=${products})}"></div>
             </div>
         </section>
     </div>

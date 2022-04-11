@@ -51,9 +51,10 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .loginPage("/users/login")
                 .usernameParameter(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY)
                 .passwordParameter(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_PASSWORD_KEY)
-                .defaultSuccessUrl("/home")
+                .defaultSuccessUrl("/")
                 .failureForwardUrl("/users/login-error")
-                .and().oauth2Login().defaultSuccessUrl("/home")
+            .and()
+                .oauth2Login().defaultSuccessUrl("/")
                 .failureUrl("/users/login-error")
             .and()
                 .logout()
@@ -75,5 +76,4 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/img/**");
     }
-
 }

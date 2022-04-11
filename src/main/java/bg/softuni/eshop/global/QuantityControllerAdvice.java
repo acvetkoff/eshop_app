@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 @ControllerAdvice
-public class QuantityController {
+public class QuantityControllerAdvice {
 
     private final OrderService orderService;
 
     @Autowired
-    public QuantityController(OrderService orderService) {
+    public QuantityControllerAdvice(OrderService orderService) {
         this.orderService = orderService;
     }
 

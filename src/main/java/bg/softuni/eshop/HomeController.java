@@ -33,56 +33,27 @@ public class HomeController extends BaseController {
     @GetMapping("/")
     public String index(Model model) {
         List<ProductServiceModel> products = this.productService.findTop6();
-        List<ProductServiceModel> games = this.productService.getByType(GAME)
+        List<ProductServiceModel> games = this.productService.getByType("GAME")
                 .stream()
                 .limit(6)
                 .collect(Collectors.toList());
 
-        List<ProductServiceModel> movies = this.productService.getByType(MOVIE)
+        List<ProductServiceModel> movies = this.productService.getByType("MOVIE")
                 .stream()
                 .limit(6)
                 .collect(Collectors.toList());
 
-        List<ProductServiceModel> books = this.productService.getByType(BOOK)
+        List<ProductServiceModel> books = this.productService.getByType("BOOK")
                 .stream()
                 .limit(6)
                 .collect(Collectors.toList());
 
-
-        model.addAttribute("types", productService.getProductTypes());
+        model.addAttribute("types", this.productService.getProductTypes());
         model.addAttribute("products", products);
         model.addAttribute("games", games);
         model.addAttribute("movies", movies);
         model.addAttribute("books", books);
 
         return this.view("index");
-    }
-
-    @GetMapping("/home")
-    public String home(Model model) {
-        List<ProductServiceModel> products = this.productService.findTop6();
-
-        List<ProductServiceModel> games = this.productService.getByType(GAME)
-                .stream()
-                .limit(6)
-                .collect(Collectors.toList());
-
-        List<ProductServiceModel> movies = this.productService.getByType(MOVIE)
-                .stream()
-                .limit(6)
-                .collect(Collectors.toList());
-
-        List<ProductServiceModel> books = this.productService.getByType(BOOK)
-                .stream()
-                .limit(6)
-                .collect(Collectors.toList());
-
-        model.addAttribute("types", productService.getProductTypes());
-        model.addAttribute("products", products);
-        model.addAttribute("games", games);
-        model.addAttribute("movies", movies);
-        model.addAttribute("books", books);
-
-        return this.view("home");
     }
 }

@@ -28,6 +28,10 @@ public class ProductSearchSpecification implements Specification<Product> {
             result = cb.and(result, cb.equal(root.get("type"), this.searchProductCriteriaDTO.getType()));
         }
 
+        if (Objects.nonNull(this.searchProductCriteriaDTO.getPrice())) {
+            result = cb.and(result, cb.equal(root.get("price"), this.searchProductCriteriaDTO.getPrice()));
+        }
+
         if (Objects.nonNull(this.searchProductCriteriaDTO.getTitle())) {
             result = cb.and(result, cb.like(root.get("title"), "%" + this.searchProductCriteriaDTO.getTitle() + "%"));
         }

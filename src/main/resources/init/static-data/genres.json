@@ -43,5 +43,10 @@
     "type": "GENRE",
     "key": "SCI_FI",
     "value": "Sci-Fi"
+  },
+  {
+    "type": "GENRE",
+    "key": "FANTASY",
+    "value": "Fantasy"
   }
 ]

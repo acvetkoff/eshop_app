@@ -36,6 +36,7 @@ public class ModelParserImpl implements ModelParser {
     private final StringToReferencedDataConverter<MediaEntity> stringToMediaConverter;
     private final StringToReferencedDataConverter<PlatformEntity> stringToPlatformConverter;
 
+    @Autowired
     public ModelParserImpl(
             @Qualifier("platformToString") ReferencedDataToStringConverter<PlatformEntity, String> platformToStringConverter,
             @Qualifier("genreToString") ReferencedDataToStringConverter<GenreEntity, String> genreToStringConverter,
@@ -55,8 +56,6 @@ public class ModelParserImpl implements ModelParser {
         this.mapEmptyStringToNull();
         this.configureMappings();
         this.addConverters();
-
-       // this.mapSetToArray();
     }
 
     private void addConverters() {
@@ -89,15 +88,15 @@ public class ModelParserImpl implements ModelParser {
         this.modelMapper.typeMap(MovieServiceModel.class, MovieEntity.class);
 
         this.modelMapper.typeMap(GameServiceModel.class, Product.class)
-                .setProvider(provisionRequest -> modelMapper.map(provisionRequest.getSource(), GameEntity.class))
+                .setProvider(provisionRequest -> this.modelMapper.map(provisionRequest.getSource(), GameEntity.class))
                 .includeBase(ProductServiceModel.class, Product.class);
 
         this.modelMapper.typeMap(BookServiceModel.class, Product.class)
-                .setProvider(provisionRequest -> modelMapper.map(provisionRequest.getSource(), BookEntity.class))
+                .setProvider(provisionRequest -> this.modelMapper.map(provisionRequest.getSource(), BookEntity.class))
                 .includeBase(ProductServiceModel.class, Product.class);
 
         this.modelMapper.typeMap(MovieServiceModel.class, Product.class)
-                .setProvider(provisionRequest -> modelMapper.map(provisionRequest.getSource(), MovieEntity.class))
+                .setProvider(provisionRequest -> this.modelMapper.map(provisionRequest.getSource(), MovieEntity.class))
                 .includeBase(ProductServiceModel.class, Product.class);
     }
 

@@ -11,5 +11,4 @@ public class ValidationException extends BindException {
     public ValidationException(BindingResult bindingResult) {
         super(bindingResult);
     }
-
 }

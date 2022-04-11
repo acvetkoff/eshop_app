@@ -1,26 +1,20 @@
 package bg.softuni.eshop.product.controllers;
 
-import java.util.*;
-
+import bg.softuni.eshop.BaseController;
+import bg.softuni.eshop.product.model.service.ProductServiceModel;
 import bg.softuni.eshop.product.model.view.CommentViewModel;
+import bg.softuni.eshop.product.model.view.ProductViewModel;
+import bg.softuni.eshop.product.service.ProductService;
 import bg.softuni.eshop.user.model.service.CommentServiceModel;
 import bg.softuni.eshop.user.service.CommentService;
 import bg.softuni.eshop.user.service.CurrentlyLoggedInUser;
+import bg.softuni.eshop.utils.parsers.ModelParser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import bg.softuni.eshop.BaseController;
-import bg.softuni.eshop.product.model.binding.SearchProductCriteriaDTO;
-import bg.softuni.eshop.product.model.service.ProductServiceModel;
-import bg.softuni.eshop.product.model.view.ProductViewModel;
-import bg.softuni.eshop.product.service.ProductService;
-import bg.softuni.eshop.utils.parsers.ModelParser;
-
-import javax.servlet.http.HttpServletRequest;
-
-import static bg.softuni.eshop.product.model.enums.ProductType.*;
+import java.util.List;
 
 @Controller
 @RequestMapping("/products")
@@ -28,37 +22,41 @@ public class ProductController extends BaseController {
 
     private final ProductService productService;
     private final CommentService commentService;
-    private final CurrentlyLoggedInUser currentlyLoggedInUser;
 
     protected ProductController(ModelParser modelParser, ProductService productService, CommentService commentService, CurrentlyLoggedInUser currentlyLoggedInUser) {
         super(modelParser);
         this.productService = productService;
         this.commentService = commentService;
-        this.currentlyLoggedInUser = currentlyLoggedInUser;
     }
 
     @GetMapping
-    public String viewProductsByType(SearchProductCriteriaDTO searchCriteria, Model model) {
-        List<ProductServiceModel> productServiceModels = this.productService.searchProducts(searchCriteria);
-        List<ProductViewModel> products = this.map(productServiceModels, ProductViewModel.class);
-        String type = searchCriteria.getType().name();
-        model.addAttribute("products", products);
-        model.addAttribute("type", searchCriteria.getType());
+    public String viewProductsByType(@RequestParam String type, Model model) {
+        model.addAttribute("currentPageURI", "/products?type=" + type);
 
-        return this.view("products");
+        if (!model.containsAttribute("products")) {
+            List<ProductViewModel> productViewModels =
+                    this.map(this.productService.getByType(type), ProductViewModel.class);
+
+            model.addAttribute("products", productViewModels);
+        }
+
+        model.addAttribute("type", type);
+
+        return this.view("product/products");
     }
 
     @PostMapping
-    public String filterProducts(String type, RedirectAttributes redirectAttributes) {
-        List<ProductServiceModel> productsByType = this.productService.getByType(valueOf(type));
-        List<ProductViewModel> productViewModels = this.map(productsByType, ProductViewModel.class);
+    public String sort(@RequestParam String type, String sortCriteria, RedirectAttributes redirectAttributes) {
+        List<ProductViewModel> productViewModels =
+                this.map(this.productService.sortBy(type, sortCriteria), ProductViewModel.class);
+
         redirectAttributes.addFlashAttribute("products", productViewModels);
-        redirectAttributes.addFlashAttribute("type", type);
-        return this.redirect("products");
+
+        return this.redirect("/products?type=" + type);
     }
 
     @GetMapping("/{id}")
-    public String viewProduct(@PathVariable String id, Model model, HttpServletRequest request) {
+    public String viewProduct(@PathVariable String id, Model model) {
         model.addAttribute("currentPageURI", "/products/" + id);
         ProductServiceModel productServiceModel = this.productService.getById(id);
         ProductViewModel product = this.map(productServiceModel, ProductViewModel.class);
@@ -79,39 +77,6 @@ public class ProductController extends BaseController {
         model.addAttribute("relatedProducts", relatedProducts);
 
         return this.view("product/product-details");
-    }
-
-    @GetMapping("/games")
-    public String viewGames(Model model) {
-        List<ProductViewModel> games =
-                this.map(this.productService.getByType(GAME), ProductViewModel.class);
-        model.addAttribute("currentPageURI", "/products/games");
-        model.addAttribute("games", games);
-
-        return this.view("product/product-games");
-    }
-
-
-    @GetMapping("/books")
-    public String viewBooks(Model model) {
-        List<ProductViewModel> books =
-                this.map(this.productService.getByType(BOOK), ProductViewModel.class);
-        model.addAttribute("currentPageURI", "/products/books");
-        model.addAttribute("books", books);
-
-        return this.view("product/product-books");
-    }
-
-
-    @GetMapping("/movies")
-    public String viewMovies(Model model) {
-        model.addAttribute("currentPageURI", "/products/movies");
-        List<ProductViewModel> movies =
-                this.map(this.productService.getByType(MOVIE), ProductViewModel.class);
-
-        model.addAttribute("movies", movies);
-
-        return this.view("product/product-movies");
     }
 
     @DeleteMapping("/{productId}/deleteComment/{commentId}")

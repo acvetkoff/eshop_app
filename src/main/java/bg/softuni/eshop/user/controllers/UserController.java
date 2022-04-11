@@ -45,7 +45,7 @@ public class UserController extends BaseController {
 
     @GetMapping("/register")
     public String register() {
-        return this.view("register");
+        return this.view("user/register");
     }
 
     @PostMapping("/register")
@@ -55,12 +55,12 @@ public class UserController extends BaseController {
         UserServiceModel userServiceModel = this.modelParser.convert(userRegisterBindingModel, UserServiceModel.class);
         this.userService.registerAndLogin(userServiceModel);
 
-        return this.redirect("/home");
+        return this.redirect("/");
     }
 
     @GetMapping("/login")
     public String login() {
-        return this.view("login");
+        return this.view("user/login");
     }
 
     @PostMapping("/login-error")
@@ -95,7 +95,6 @@ public class UserController extends BaseController {
 
     @ExceptionHandler(ValidationException.class)
     public String handleInvalidUserCredentialException(ValidationException exception, RedirectAttributes  redirectAttributes) {
-        List<FieldError> fieldErrors = exception.getFieldErrors();
         redirectAttributes.addFlashAttribute("invalidCredentials", true);
 
         exception.getFieldErrors()

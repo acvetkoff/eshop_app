@@ -32,6 +32,12 @@ header {
 .nav-icons li a {
     color: white;
 }
+.login {
+    transition: 0.5s;
+}
+.login:hover {
+    color: var(--orange);
+}
 .nav-icon {
     font-size: 14px;
 }
@@ -106,10 +112,10 @@ header {
     height: 16px;
 }
 
-
 .products-navigation-panel {
     background-color: #fff;
     height: 50px;
+    width: 100vw;
 }
 .product-types {
     display: flex;

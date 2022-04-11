@@ -1,15 +1,22 @@
-let checkOutBtn = document.getElementById('checkOutBtn');
-let closeBtn = document.getElementById('closeBtn');
+$('.cart-item').each(() => {
+    $('.trash-can').on('click', (e) => {
+        e.preventDefault();
+        console.log(e.target);
+        $('.delete-modal').show();
+    })
 
-closeBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    let modal = document.getElementById('modal');
-    modal.style.display = 'none';
+    $('.cancel').on('click', (e) => {
+        e.preventDefault();
+        $('.delete-modal').hide();
+    });
 });
 
-checkOutBtn.addEventListener('onload', function(e) {
-    e.preventDefault();
-    
-    let modal = document.getElementById('modal');
-    modal.style.display = 'block';
+$('#checkOutBtn').on('load', (e) => {
+   e.preventDefault();
+   $('#modal').show();
+
+   $('#closeBtn').on('click', (e) => {
+       e.preventDefault();
+       $('#modal').hide();
+   });
 });

@@ -61,17 +61,122 @@
   },
   {
     "type": "MOVIE",
-    "title": "Joker",
-    "price": "12.80",
-    "director": "Todd Phillips",
-    "studio": "New Line Cinema",
-    "imdbUrl": "https://www.imdb.com/title/tt7286456/?ref_=nv_sr_srsg_0",
-    "releasedOn": "12-01-2007",
-    "description": "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.",
+    "title": "Spider-Man: No Way Home",
+    "price": "28.00",
+    "director": "Jon Watts",
+    "studio": "Columbia Pictures",
+    "imdbUrl": "https://www.imdb.com/title/tt10872600/?ref_=nv_sr_srsg_0",
+    "releasedOn": "17-12-2021",
+    "description": "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.",
+    "mediaTypes": [ "BLUE_RAY", "DVD" ],
+    "genres": ["ACTION", "ADVENTURE", "FANTASY"],
+    "image": {
+      "imagePath": "/img/movies/spider_man_no_way_home.jpg"
+    }
+  },
+  {
+    "type": "MOVIE",
+    "title": "Zack Snyder's Justice League",
+    "price": "31.19",
+    "director": "Zack Snyder",
+    "studio": "Warner Bros. Pictures",
+    "imdbUrl": "https://www.imdb.com/title/tt12361974/?ref_=ttls_li_tt",
+    "releasedOn": "18-03-2021",
+    "description": "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.",
     "mediaTypes": [ "BLUE_RAY" ],
+    "genres": ["ACTION", "ADVENTURE", "FANTASY"],
+    "image": {
+      "imagePath": "/img/movies/justice_league.jpg"
+    }
+  },
+  {
+    "type": "MOVIE",
+    "title": "Fear Street: Part One - 1994",
+    "price": "15.00",
+    "director": "Leigh Janiak",
+    "studio": "Chernin Entertainment",
+    "imdbUrl": "https://www.imdb.com/title/tt6566576/?ref_=nv_sr_srsg_3",
+    "releasedOn": "28-06-2021",
+    "description": "A circle of teenage friends accidentally encounter the ancient evil responsible for a series of brutal murders that have plagued their town for over 300 years. Welcome to Shadyside.",
+    "mediaTypes": [ "BLUE_RAY", "DVD" ],
+    "genres": ["HORROR", "MYSTERY", "DRAMA"],
+    "image": {
+      "imagePath": "/img/movies/fear_street_one.jpg"
+    }
+  },
+  {
+    "type": "MOVIE",
+    "title": "Fear Street: Part Two - 1978",
+    "price": "15.00",
+    "director": "Leigh Janiak",
+    "studio": "Chernin Entertainment",
+    "imdbUrl": "https://www.imdb.com/title/tt9701940/?ref_=tt_sims_tt_i_1",
+    "releasedOn": "08-08-2021",
+    "description": "Shadyside, 1978. School's out for summer and the activities at Camp Nightwing are about to begin. But when another Shadysider is possessed with the urge to kill, the fun in the sun becomes a gruesome fight for survival.",
+    "mediaTypes": [ "BLUE_RAY", "DVD" ],
     "genres": ["CRIME", "COMEDY", "THRILLER", "DRAMA"],
     "image": {
-      "imagePath": "/img/movies/joker.jpg"
+      "imagePath": "/img/movies/fear_street_two.jpg"
+    }
+  },
+  {
+    "type": "MOVIE",
+    "title": "Fear Street: Part Three - 1666",
+    "price": "15.00",
+    "director": "Leigh Janiak",
+    "studio": "Chernin Entertainment",
+    "imdbUrl": "https://www.imdb.com/title/tt9701942/?ref_=nv_sr_srsg_6",
+    "releasedOn": "16-08-2021",
+    "description": "The origins of Sarah Fier's curse are finally revealed as history comes full circle on a night that changes the lives of Shadysiders forever.",
+    "mediaTypes": [ "BLUE_RAY", "DVD" ],
+    "genres": ["CRIME", "COMEDY", "THRILLER", "DRAMA"],
+    "image": {
+      "imagePath": "/img/movies/fear_street_three.jpg"
+    }
+  },
+  {
+    "type": "MOVIE",
+    "title": "Nobody",
+    "price": "10.00",
+    "director": "Ilya Naishuller",
+    "studio": "Universal Pictures",
+    "imdbUrl": "https://www.imdb.com/title/tt7888964/?ref_=nv_sr_srsg_0",
+    "releasedOn": "26-03-2021",
+    "description": "A docile family man slowly reveals his true character after his house gets burgled by two petty thieves, which, coincidentally, leads him going to a bloody war with a Russian crime boss.",
+    "mediaTypes": [ "DVD" ],
+    "genres": ["CRIME", "ACTION", "DRAMA"],
+    "image": {
+      "imagePath": "/img/movies/nobody.jpg"
+    }
+  },
+  {
+    "type": "MOVIE",
+    "title": "The Tomorrow War",
+    "price": "18.99",
+    "director": "Chris McKay",
+    "studio": "Paramount Pictures",
+    "imdbUrl": "https://www.imdb.com/title/tt9777666/?ref_=tt_sims_tt_i_3",
+    "releasedOn": "02-08-2021",
+    "description": "A family man is drafted to fight in a future war where the fate of humanity relies on his ability to confront the past.",
+    "mediaTypes": [ "BLUE_RAY", "DVD" ],
+    "genres": ["ACTION", "ADVENTURE", "DRAMA"],
+    "image": {
+      "imagePath": "/img/movies/the_tomorrow_war.jpg"
+    }
+  },
+  {
+    "type": "MOVIE",
+    "title": "The Shawshank Redemption",
+    "price": "20.00",
+    "director": "Frank Darabont",
+    "studio": "New Line Cinema",
+    "imdbUrl": "https://www.imdb.com/title/tt0111161/?ref_=nv_sr_srsg_0",
+    "releasedOn": "22-09-1994",
+    "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "mediaTypes": [ "DVD" ],
+    "genres": ["DRAMA"],
+    "image": {
+      "imagePath": "/img/movies/shawshank.jpg"
     }
   }
 ]

@@ -4,9 +4,7 @@ import bg.softuni.eshop.product.model.binding.ProductBindingModel;
 import bg.softuni.eshop.utils.io.FileReader;
 import bg.softuni.eshop.utils.io.impl.FileReaderImpl;
 import bg.softuni.eshop.utils.parsers.FileParser;
-import bg.softuni.eshop.utils.parsers.ModelParser;
 import bg.softuni.eshop.utils.parsers.impl.FileJsonParser;
-import bg.softuni.eshop.utils.parsers.impl.ModelParserImpl;
 import com.google.gson.*;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,20 +22,19 @@ import java.util.List;
 import static java.util.Locale.ENGLISH;
 
 @Configuration
+
 public class AppBeanConfiguration {
+    private final ProductConfiguration productConfiguration;
 
     @Autowired
-    private ProductConfiguration productConfiguration;
+    public AppBeanConfiguration(ProductConfiguration productConfiguration) {
+        this.productConfiguration = productConfiguration;
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-//    @Bean
-//    public ModelParser modelParser() {
-//        return new ModelParserImpl(platformToStringConverter, genreToStringConverter, mediaToStringConverter, stringToGenreConverter, stringToMediaConverter, stringToPlatformConverter);
-//    }
 
     @Bean
     public Gson gson() {

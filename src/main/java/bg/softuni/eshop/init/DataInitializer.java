@@ -276,7 +276,6 @@ public class DataInitializer implements CommandLineRunner {
         }
 
         this.referencedDataRepository.saveAll(referencedDataList);
-        System.out.println();
     }
 
     private PlatformEntity[] readPlatform() throws IOException {

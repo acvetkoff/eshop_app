@@ -1,11 +1,12 @@
+
 package bg.softuni.eshop.utils.parsers.converters;
 
-import bg.softuni.eshop.product.dao.ReferencedDataRepository;
-import bg.softuni.eshop.product.model.entity.ReferencedData;
-import org.modelmapper.spi.MappingContext;
-import org.springframework.beans.factory.annotation.Autowired;
+        import bg.softuni.eshop.product.dao.ReferencedDataRepository;
+        import bg.softuni.eshop.product.model.entity.ReferencedData;
+        import org.modelmapper.spi.MappingContext;
+        import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Optional;
+        import java.util.Optional;
 
 public abstract class BaseStringToReferencedDataConverter<T extends ReferencedData> implements StringToReferencedDataConverter<T>{
 

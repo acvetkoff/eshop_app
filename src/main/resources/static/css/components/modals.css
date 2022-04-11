@@ -1,8 +1,8 @@
 .modal {
     position: fixed;
     z-index: 9999;
-    top: 0vh;
-    left: 0vw;
+    top: 0;
+    left: 0;
     width: 100vw;
     overflow: auto;
     height: 100vh;
@@ -27,13 +27,12 @@
     color: black;
 }
 .sucess-img {
-    margin: 33px;
-    margin-left: 42%;
+    margin: 33px 33px 33px 42%;
     width: 54px;
     height: 54px;
 }
 .heading-message {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -43,12 +42,12 @@
     color: #27AE60;
 }
 .modal-content p {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 17px;
-    letter-spacing: 0em;
+    letter-spacing: 0;
     text-align: center;
     color: #333333;
     margin-top: 16px;
@@ -67,8 +66,79 @@
     margin-left: 17px;
     background-color: #F97B54;
     color: #fff;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
 }
 .go-to-homepage:hover{
     cursor: pointer;
+}
+
+.delete-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    overflow: auto;
+    height: 100vh;
+    background-color: rgba(0,0,0, 0.5);
+}
+.delete-modal-content {
+    width: 370px;
+    height: 190px;
+    margin: 20% auto;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.delete-modal-content .delete-heading {
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0;
+    text-align: center;
+    padding-top: 32px;
+}
+
+.delete-modal-content .confirm-delete {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    color: #333333;
+    text-align: center;
+    margin-top: 16px;
+}
+.delete-modal-content form {
+
+    text-align: center;
+}
+.delete-modal-content form .btn-delete {
+    padding: 12px 55px;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    background-color: #EB5757;
+    opacity: 0.9;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.delete-modal-content form .cancel {
+    background-color: #828282;
+    opacity: 0.9;
+    border-radius: 4px;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #FFFFFF;
+}
+.delete-modal-content form .btn-delete:hover,
+.delete-modal-content form .cancel:hover{
+    opacity: 1;
 }

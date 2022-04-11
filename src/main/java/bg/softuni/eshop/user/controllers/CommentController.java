@@ -49,7 +49,7 @@ public class CommentController extends BaseController {
         model.addAttribute("from", customerServiceModel.getUser().getUsername());
         model.addAttribute("product", productServiceModel);
 
-        return this.view("comment");
+        return this.view("user/comment");
     }
 
     @PostMapping
@@ -62,7 +62,7 @@ public class CommentController extends BaseController {
         commentServiceModel.setFrom(customerServiceModel.getUser());
         this.commentService.addComment(commentServiceModel);
 
-        return this.redirect(String.format("/products/%s", productId));
+        return this.redirect(String.format("/products/%s#reviews", productId));
     }
 
     @PostMapping("/{id}")

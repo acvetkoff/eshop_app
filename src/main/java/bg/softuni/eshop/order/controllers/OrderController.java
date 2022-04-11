@@ -50,8 +50,7 @@ public class OrderController extends BaseController {
         OrderViewModel orderViewModel = null;
         if (currentOrder == null) {
             orderViewModel = new OrderViewModel();
-            orderViewModel.setItems(new ArrayList<>());
-
+            orderViewModel.setItems(new ArrayList<>()); 
         } else {
             orderViewModel = this.map(currentOrder, OrderViewModel.class);
             Integer totalOrderItemsInOrder = this.orderService.getTotalOrderItemsInOrder();
@@ -67,7 +66,7 @@ public class OrderController extends BaseController {
 
         model.addAttribute("orderViewModel", orderViewModel);
 
-        return this.view("cart");
+        return this.view("order/cart");
     }
 
     @GetMapping("{id}")
@@ -79,7 +78,7 @@ public class OrderController extends BaseController {
             This is dummy page
             TODO: to be implemented
          */
-        return this.view("order");
+        return this.view("order/order");
     }
 
     @PostMapping("/add")
@@ -89,9 +88,7 @@ public class OrderController extends BaseController {
 
         this.orderService.addOrderItem(orderItemServiceModel);
 
-        String[] endpoints = orderItemBindingModel.getCurrentPageURI().split("\\/");
-
-        return this.redirect("/products/" + endpoints[endpoints.length - 1]);
+        return this.redirect(orderItemBindingModel.getCurrentPageURI());
     }
 
     @PostMapping("/buy")

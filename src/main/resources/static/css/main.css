@@ -1,5 +1,4 @@
 @import "components/footer.css";
-
 :root {
     --main-color: rgb(245, 245, 248);
     --main-dark: rgb(51, 51, 51);
@@ -159,28 +158,27 @@ body {
 .product-price span {
     color: var(--main-dark);
 }
-.new-games h2,
-.new-books h2,
-.new-movies h2 {
+
+.new-products-section h2 {
     margin-top: 64px;
     margin-bottom: 34px;
     font-size: 24px;
     font-weight: 200px;
     text-align: center;
 }
-.view-all {
-    margin: 34px 110px auto;
+.view-all a {
+    margin-left: 550px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     font-size: 14px;
     color: #2D9CDB;
-    font-weight: 350;
-    padding-left: 50%;
+    font-weight: 400;
     text-decoration: underline;
-    width: 100%;
-    height: 97px;
 }
 hr {
     margin-top: 56px;
-    border: 1px solid #E0E0E0;
+    border: 2px solid #E0E0E0;
+    background-color: #E0E0E0 ;
 }
 .hidden-input {
     display: none;

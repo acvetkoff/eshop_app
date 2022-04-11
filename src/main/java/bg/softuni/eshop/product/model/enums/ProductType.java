@@ -11,6 +11,8 @@ public enum ProductType {
     DEFAULT;
 
     public static List<ProductType> getSupportedTypes() {
-        return Arrays.stream(ProductType.values()).filter(t -> !t.equals(DEFAULT)).collect(Collectors.toList());
+        return Arrays.stream(ProductType.values())
+                .filter(t -> !t.equals(DEFAULT))
+                .collect(Collectors.toList());
     }
 }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Not Found</title>
+    <link rel="stylesheet" href="/css/components/navbar.css">
+    <link rel="stylesheet" href="/css/error.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+</head>
+<body>
+    <header >
+        <nav th:fragment="~{fragments/navigation :: navbar}"></nav>
+    </header>
+
+    <main th:replace="~{fragments/errors :: errors(
+                                                 errorStatus=${'404 Error'},
+                                                 errorText=${'The page you were looking for could not be found'},
+                                                 errorImg=@{'/img/icons/404error_img.svg'})}"></main>
+
+<!--    <main>-->
+<!--        <h1 class="error-heading">404 Error</h1>-->
+<!--        <p class="error-text">The page you were looking for could not be found.</p>-->
+<!--        <img class="error-image" src="/img/icons/404error_img.svg" alt="error image">-->
+<!--    </main>-->
+
+    <footer th:fragment="~{fragments/footer :: footer}"></footer>
+</body>
+</html>

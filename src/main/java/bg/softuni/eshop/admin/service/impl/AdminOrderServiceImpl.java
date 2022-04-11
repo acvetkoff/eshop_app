@@ -2,7 +2,7 @@ package bg.softuni.eshop.admin.service.impl;
 
 import bg.softuni.eshop.BaseService;
 import bg.softuni.eshop.admin.service.AdminOrderService;
-import bg.softuni.eshop.exceptions.ProductNotFoundException;
+import bg.softuni.eshop.exceptions.ResourceNotFoundException;
 import bg.softuni.eshop.order.dao.OrderRepository;
 import bg.softuni.eshop.order.model.entity.OrderEntity;
 import bg.softuni.eshop.order.model.service.OrderServiceModel;
@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AdminOrderServiceImpl extends BaseService implements AdminOrderService {
@@ -29,7 +28,7 @@ public class AdminOrderServiceImpl extends BaseService implements AdminOrderServ
     @Override
     public OrderServiceModel findById(String id) {
         return this.map(this.orderRepository.findById(id).orElseThrow(() -> {
-            throw new ProductNotFoundException("Order not found " + id);
+            throw new ResourceNotFoundException("Order not found " + id);
         }), OrderServiceModel.class);
     }
 
@@ -47,7 +46,7 @@ public class AdminOrderServiceImpl extends BaseService implements AdminOrderServ
     @Transactional
     public void delete(String orderId) {
         orderRepository.findById(orderId).ifPresentOrElse(this.orderRepository::delete, () -> {
-            throw new ProductNotFoundException("Order not found " + orderId);
+            throw new ResourceNotFoundException("Order not found " + orderId);
         });
     }
 

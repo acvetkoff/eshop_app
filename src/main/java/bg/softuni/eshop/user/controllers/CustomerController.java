@@ -49,7 +49,7 @@ public class CustomerController extends BaseController {
                 this.map(this.currentlyLoggedInUser.loggedInCustomer(), CustomerProfileViewModel.class);
         model.addAttribute("customer", customerProfileViewModel);
 
-        return this.view("customer-profile");
+        return this.view("/user/customer-profile");
     }
 
     @GetMapping("/profile/comments")
@@ -66,7 +66,7 @@ public class CustomerController extends BaseController {
 
         model.addAttribute("comments", customerComments);
 
-        return this.view("my-reviews");
+        return this.view("user/my-reviews");
     }
 
     @GetMapping("/profile/orders")
@@ -94,6 +94,6 @@ public class CustomerController extends BaseController {
         model.addAttribute("orders", orders);
         model.addAttribute("suggested", suggested);
 
-        return this.view("my-orders");
+        return this.view("user/my-orders");
     }
 }

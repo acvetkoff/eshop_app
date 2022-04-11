@@ -2,6 +2,7 @@ package bg.softuni.eshop;
 
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.time.LocalDate;

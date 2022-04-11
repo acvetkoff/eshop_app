@@ -2,7 +2,7 @@ package bg.softuni.eshop.admin.service.impl;
 
 import bg.softuni.eshop.BaseService;
 import bg.softuni.eshop.admin.service.AdminProductService;
-import bg.softuni.eshop.exceptions.ProductNotFoundException;
+import bg.softuni.eshop.exceptions.ResourceNotFoundException;
 import bg.softuni.eshop.order.service.OrderService;
 import bg.softuni.eshop.product.dao.ProductRepository;
 import bg.softuni.eshop.product.model.entity.ImageEntity;
@@ -125,7 +125,7 @@ public class AdminProductServiceImpl extends BaseService implements AdminProduct
     public ProductServiceModel getById(String id) {
         ProductServiceModel productServiceModel = this.productRepository.findById(id)
                 .map(product -> this.map(product, ProductServiceModel.class))
-                .orElseThrow(() -> new ProductNotFoundException(PRODUCT_NOT_FOUND_MESSAGE));
+                .orElseThrow(() -> new ResourceNotFoundException(PRODUCT_NOT_FOUND_MESSAGE));
 
         return productServiceModel;
     }

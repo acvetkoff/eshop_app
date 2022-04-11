@@ -18,6 +18,7 @@ public class SearchProductCriteriaDTO {
     private BigDecimal endPrice;
     private LocalDate startDate;
     private LocalDate endDate;
+    private BigDecimal price;
 
     // GameEntity fields
     private String company;

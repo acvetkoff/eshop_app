@@ -1,7 +1,7 @@
 let actualItemPrice = parseFloat($("#actualPrice").text());
 // TODO fix jquery to fire event on dynamically added content (thymeleaf generated)
 
-$(".spinner").on("click", ".increment > #incrementQuantity" ,function() {
+$(".spinner").on("click", ".increment > #incrementQuantity", () => {
     let oldQuantity = parseFloat($("#quantity").val());
     let oldItemTotalPrice = parseFloat($("#orderItemTotalPrice").text());
     let oldOrderTotalPrice = parseFloat($("#orderTotalPrice").text().match(/\d+/));
@@ -11,7 +11,7 @@ $(".spinner").on("click", ".increment > #incrementQuantity" ,function() {
     $("#orderTotalPrice").text("Total: " + (oldOrderTotalPrice + actualItemPrice).toFixed(2));
 });
 
-$(".spinner").on("click", ".decrement > #decrementQuantity",function() {
+$(".spinner").on("click", ".decrement > #decrementQuantity", () => {
 
     let oldQuantity = parseFloat($("#quantity").val());
     let oldItemTotalPrice = parseFloat($("#orderItemTotalPrice").text());
